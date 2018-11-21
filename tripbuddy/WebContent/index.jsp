@@ -10,6 +10,8 @@
 
 <body>
 
+<h2><a href="./addhotels">Add Hotels</a></h2>
+
   <form name="login" action="#" method="post">
 
     <!-----  (header)  ----->
@@ -79,7 +81,7 @@
 
         <div class="item active">
           <div style="width:100%; height: 400px;">
-            <img src="image/taj2.jpg" style="width:100%; height: 400px;">
+            <img src="resources/images/taj2.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Taj Mahal</h3>
               <p id="subheading">Taj Mahal is the white domed marble mausoleum at Agra in India, one of the most
@@ -90,7 +92,7 @@
 
         <div class="item">
           <div style="width:100%; height: 400px;">
-            <img src="image/nainital1.jpg" style="width:100%; height: 400px;">
+            <img src="resources/images/nainital1.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Nainital</h3>
               <p id="subheading">Nainital is Kumaon’s biggest town and favorite hill retrea</p>
@@ -101,7 +103,7 @@
 
         <div class="item">
           <div style="width:100%; height: 400px;">
-            <img src="image/ladakh2.jpg" style="width:100%; height: 400px;">
+            <img src="resources/images/ladakh2.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Leh Ladakh</h3>
               <p id="subheading">Ladakh’s remarkably well-balanced traditional society has much to teach the West in
@@ -113,7 +115,7 @@
 
         <div class="item">
           <div style="width:100%; height: 400px;">
-            <img src="image/goa.jpg" style="width:100%; height: 400px;">
+            <img src="resources/images/goa.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Goa</h3>
               <p id="subheading">Goa has so many beaches which offers a complete holiday experience for every traveler</p>
@@ -124,7 +126,7 @@
 
         <div class="item">
           <div style="width:100%; height: 400px;">
-            <img src="image/shimla1.jpg" style="width:100%; height: 400px;">
+            <img src="resources/images/shimla1.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Manali</h3>
               <p id="subheading">Travelers assemble here to hang out in the hippie villages around the main town</p>
@@ -159,19 +161,19 @@
     <div style="width: 100%;font-family: bookman old stylr; font-size: 30px; color:#006699; width: 100%;" class="container-fluid">
 
       <div class="col-sm-3 zoom1" style="margin-left:8%;">
-        <img src="image/map2.png">
+        <img src="resources/images/map2.png">
         Make a plan
       </div>
 
 
       <div class="col-sm-3 zoom1" style="margin-left:8%;">
-        <img src="image/customize.png">
+        <img src="resources/images/customize.png">
         Customize it
       </div>
 
 
       <div class="col-sm-3 zoom1" style="margin-left:8%;">
-        <img src="image/manage.png">
+        <img src="resources/images/manage.png">
         Manage it
       </div>
       <br>
@@ -187,7 +189,7 @@
 
       <div class="col-md-12">
         <div class=" search" style="width: 100%; border-color:#006699; border-width :3px;">
-          <img src="image/search.jpg" style="width:100%; height: 70%;">
+          <img src="resources/images/search.jpg" style="width:100%; height: 70%;">
 
           <div class="search1">
             <li>Find the perfect place</li><br>
@@ -214,7 +216,7 @@
 
         <div class="col-md-3">
           <div class="thumbnail offer" style="border-color:#006699; border-width :3px;">
-            <img src="image/couple3.jpg" style="width:100%; height: 350px;">
+            <img src="resources/images/couple3.jpg" style="width:100%; height: 350px;">
           </div>
           <div style="  position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); color:white; font-family: bookman old style; font-size: 200%; ">
             Couple
@@ -222,7 +224,7 @@
         </div>
         <div class="col-md-3">
           <div class="thumbnail offer" style="border-color:#006699; border-width :3px;">
-            <img src="image/family2.jpg" style="width:100%;  height: 350px;">
+            <img src="resources/images/family2.jpg" style="width:100%;  height: 350px;">
           </div>
           <div style="  position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); color:white; font-family: bookman old style; font-size: 200%; ">
             Family
@@ -230,7 +232,7 @@
         </div>
         <div class="col-md-3">
           <div class="thumbnail offer" style="border-color:#006699; border-width :3px;">
-            <img src="image/friends1.jpg" style="width:100%;  height: 350px;">
+            <img src="resources/images/friends1.jpg" style="width:100%;  height: 350px;">
           </div>
           <div style=" position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); color:white; font-family: bookman old style; font-size: 200%; ">
             Friends
@@ -238,7 +240,7 @@
         </div>
         <div class="col-md-3">
           <div class="thumbnail offer" style="border-color:#006699; border-width :3px;">
-            <img src="image/single3.jpg" style="width:100%;  height: 350px;">
+            <img src="resources/images/single3.jpg" style="width:100%;  height: 350px;">
           </div>
           <div style=" position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); color:white; font-family: bookman old style; font-size: 200%; ">
             Single
@@ -263,7 +265,7 @@
       <div class="row container-fluid" style="width:100%; margin-left: 0px;">
         <div class="col-md-3">
           <div class="thumbnail zoom">
-            <img src="image/rajan.jpg" style="width:100%; height: 250px; ">
+            <img src="resources/images/rajan.jpg" style="width:100%; height: 250px; ">
             <div class="caption" style="color:#006699; font-family: bookman old style; font-size:20px;">
               <p>Rajan,<br>
                 Easy to use, cheapest price and secured. !
@@ -274,7 +276,7 @@
         </div>
         <div class="col-md-3">
           <div class="thumbnail zoom">
-            <img src="image/rahul.jpg" style="width:100%;  height: 250px;">
+            <img src="resources/images/rahul.jpg" style="width:100%;  height: 250px;">
             <div class="caption" style="color:#006699; font-family: bookman old style; font-size:20px;">
               <p>Rahul,<br>
                 I was treated very well thank you. !
@@ -285,7 +287,7 @@
         </div>
         <div class="col-md-3">
           <div class="thumbnail zoom">
-            <img src="image/yamini.jpg" style="width:100%;  height: 250px;">
+            <img src="resources/images/yamini.jpg" style="width:100%;  height: 250px;">
             <div class="caption" style="color:#006699; font-family: bookman old style; font-size:20px;">
               <p>Yamini,<br>
                 No extra fees. Simple to use. Satisfide. !
@@ -296,7 +298,7 @@
         </div>
         <div class="col-md-3">
           <div class="thumbnail zoom">
-            <img src="image/rita.jpg" style="width:100%;  height: 250px;">
+            <img src="resources/images/rita.jpg" style="width:100%;  height: 250px;">
             <div class="caption" style="color:#006699; font-family: bookman old style; font-size:20px;">
               <p>Rita,<br>
                 Site is easy to use and great service.!
@@ -440,7 +442,7 @@
     <!-----   (SIGNUP)   ----->
 
     <a href="#" class="btn btn-default btn-lg zoom" style="position: fixed; opacity:0.8; background-color:rgb(62, 107, 202); right: 3%; bottom: 3%; ">
-      <span class="center glyphicon" style="color:white; font-size: 3vmin;"><b> <img src="image/facebookwhite.png"
+      <span class="center glyphicon" style="color:white; font-size: 3vmin;"><b> <img src="resources/images/facebookwhite.png"
             style="width:5vmin;">
           LOGIN TO FACEBOOK</b></span></a>
 
