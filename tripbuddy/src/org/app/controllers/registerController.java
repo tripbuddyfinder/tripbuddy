@@ -1,10 +1,10 @@
 package org.app.controllers;
 
-import org.app.daoss.UserDaoImpl;
+import org.app.daos.UserDaoImpl;
 import org.app.models.userModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
+
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -30,10 +30,7 @@ public class homecontroller {
 		System.out.println("Inserted successfully");
 		System.out.println();
 		return usr;
-	}
-	@RequestMapping(value="hello", method=RequestMethod.GET)
-	public String hello() {
-		return "hello";
+	
 	}
 }
 

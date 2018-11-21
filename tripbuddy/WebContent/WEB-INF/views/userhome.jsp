@@ -83,7 +83,7 @@
     <!-----   (Search)   ----->
 
 
-        <div class="searching" style="background-image: url(image/logo.jpg); background-size: 100% 100%;">
+        <div class="searching" style="background-resources/images: url(resources/images/logo.jpg); background-size: 100% 100%;">
             <br><br><br><br><br>
             <center>
                 <div class="searching1">
@@ -107,7 +107,7 @@
 
             <div class="col-md-6">
               <div class=" search" style="width: 100%; border-color:#006699; border-width :3px;">
-                <img src="image/search.jpg" style="width:100%; height: 70%;">
+                <img src="resources/images/search.jpg" style="width:100%; height: 70%;">
       
                 <div class="search1">
                   <li>Find the perfect place</li><br>
@@ -123,8 +123,8 @@
 
 
 
-<div class="image">
-<img src="image/1.jpg" style="width:100%;">
+<div class="resources/images">
+<img src="resources/images/1.jpg" style="width:100%;">
 </div>
 
 
