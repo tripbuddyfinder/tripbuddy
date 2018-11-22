@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class homecontroller {
+public class homeController {
 	
 	@RequestMapping(value="", method=RequestMethod.POST)
 
