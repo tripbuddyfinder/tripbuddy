@@ -1,46 +1,40 @@
-package org.app.controllers;
+package org.app.daos;
 
-import javax.servlet.http.HttpServletRequest;
-
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import org.app.crud.connect;
 import org.app.models.userModel;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.jdbc.core.RowMapper;
 
-@Controller
-public class rjnhomecontroller {
-	
-	@RequestMapping(value="", method=RequestMethod.POST)
 
-	
-	public @ResponseBody userModel insertdata(@ModelAttribute("guesthome") 
-			userModel usr)
-	{
+public class UserDaoImpl implements UserDao
+{
 
-		System.out.println(usr.toString());
-		System.out.println("Inserting data");
-
-		org.app.daos.UserDaoImpl dao = new org.app.daos.UserDaoImpl();
-		dao.insert(usr);
-		System.out.println("Inserted successfully");
-		System.out.println();
-		return usr;
+	@Override
+	public int insert(userModel usr) {
+	String query="Insert into users(u_email,u_name,u_city,u_pic) values(?,?,?,?)";
+	int i=connect.getTemplate().update(query,  new Object[] { usr.getUemail(), usr.getUname() , usr.getUcity(), usr.getUpic() } );
+	return i;
 	}
-	@RequestMapping(value="hello", method=RequestMethod.GET)
-	public String hello() {
-		return "hello";
-	}
+
+	@Override
+	public userModel getPofile(int uid) {
+		String sql = "SELECT * FROM users WHERE u_id = ?";
+		
+		
+		
+		userModel user = connect.getTemplate().queryForObject(sql, new Object[] {uid}, 
+				new RowMapper<userModel>() {
+					@Override
+					public userModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+						userModel user = new userModel();
+						user.setUcity(rs.getString("u_city"));
+						user.setUemail(rs.getString("u_email"));
+						user.setUname(rs.getString("u_name"));
+						user.setUpic(rs.getString("u_pic"));
+						return user;
+					}});
+		
+		return user;
+	} 
 }
-
-//public @ResponseBody userModel showData() 
-//	return null;
-//	usr.setU_name("rjn");
-//	usr.setU_city("Delhi");
-//	usr.setU_email("@google.com");
-	
-//}
