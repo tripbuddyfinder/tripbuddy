@@ -1,50 +1,46 @@
-package org.app.daos;
+package org.app.controllers;
 
-import java.sql.Connection;
-import java.sql.Types;
+import javax.servlet.http.HttpServletRequest;
 
-import javax.activation.DataSource;
-
-import org.app.crud.connect;
 import org.app.models.userModel;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.mysql.cj.jdbc.PreparedStatement;
-
-
-public class UserDaoImpl implements UserDao
-{
-
-	@Override
-	public int insert(userModel usr) {
-		
-//		String data=usr.getUname();
-//		System.out.println(data);
-//	
-		String query="Insert into users(u_email,u_name,u_city,u_pic) values(?,?,?,?)";
-
-		JdbcTemplate conn= connect.getTemplate();
+@Controller
+public class rjnhomecontroller {
 	
-			 
-			
-				
-				 int i=conn.update(query,  new Object[] { usr.getUemail(), usr.getUname() , usr.getUcity(), usr.getUpic() } );
-				 return i;
-	} 
+	@RequestMapping(value="", method=RequestMethod.POST)
+
+	
+	public @ResponseBody userModel insertdata(@ModelAttribute("guesthome") 
+			userModel usr)
+	{
+
+		System.out.println(usr.toString());
+		System.out.println("Inserting data");
+
+		org.app.daos.UserDaoImpl dao = new org.app.daos.UserDaoImpl();
+		dao.insert(usr);
+		System.out.println("Inserted successfully");
+		System.out.println();
+		return usr;
+	}
+	@RequestMapping(value="hello", method=RequestMethod.GET)
+	public String hello() {
+		return "hello";
+	}
 }
 
-				
-		 	
-		 	
-		 	
-				
-					//sql, new Object[] { custId }, 
-					//new BeanPropertyRowMapper(Customer.class));
-		
-
-			
-
+//public @ResponseBody userModel showData() 
+//	return null;
+//	usr.setU_name("rjn");
+//	usr.setU_city("Delhi");
+//	usr.setU_email("@google.com");
 	
-
-
+//}
