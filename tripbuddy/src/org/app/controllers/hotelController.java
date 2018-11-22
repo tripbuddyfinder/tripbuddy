@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-public class hotelcontroller
+public class hotelController
 { 
 	@RequestMapping(value="/addhotels" , method=RequestMethod.GET)
 	public String showhotellink()
