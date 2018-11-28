@@ -2,12 +2,14 @@ package org.app.models;
 
 public class userModel 
 {
-	private int uid;
+	private String uid;
 	private String uname , uemail , ucity , upic;
-	public int getUid() {
+	public userModel() {}
+	
+	public String getUid() {
 		return uid;
 	}
-	public void setUid(int uid) {
+	public void setUid(String uid) {
 		this.uid = uid;
 	}
 	public String getUname() {
@@ -34,4 +36,11 @@ public class userModel
 	public void setUpic(String upic) {
 		this.upic = upic;
 	}
+
+	@Override
+	public String toString() {
+		return "userModel [uid=" + uid + ", uname=" + uname + ", uemail=" + uemail + ", ucity=" + ucity + ", upic="
+				+ upic + "]";
+	}
+	
 }	

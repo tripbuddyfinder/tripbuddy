@@ -26,6 +26,7 @@
     </plugins>
   </build>
   <dependencies>
+  
   <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 <dependency>
     <groupId>com.fasterxml.jackson.core</groupId>
@@ -45,6 +46,19 @@
     <artifactId>spring-core</artifactId>
     <version>4.3.10.RELEASE</version>
 </dependency>
+
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-websocket</artifactId>
+    <version>4.3.10.RELEASE</version>
+</dependency>
+ 
+<dependency>
+    <groupId>org.springframework</groupId>
+    <artifactId>spring-messaging</artifactId>
+    <version>4.3.10.RELEASE</version>
+</dependency>
+
   <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
 <dependency>
     <groupId>org.springframework</groupId>

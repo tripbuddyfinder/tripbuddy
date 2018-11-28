@@ -12,13 +12,13 @@ public class UserDaoImpl implements UserDao
 
 	@Override
 	public int insert(userModel usr) {
-	String query="Insert into users(u_email,u_name,u_city,u_pic) values(?,?,?,?)";
-	int i=connect.getTemplate().update(query,  new Object[] { usr.getUemail(), usr.getUname() , usr.getUcity(), usr.getUpic() } );
+	String query="Insert into users(u_id,u_email,u_name,u_city,u_pic) values(?,?,?,?,?)";
+	int i=connect.getTemplate().update(query,  new Object[] {usr.getUid(), usr.getUemail(), usr.getUname() , usr.getUcity(), usr.getUpic() } );
 	return i;
 	}
 
 	@Override
-	public userModel getPofile(int uid) {
+	public userModel getPofile(String uid) {
 		String sql = "SELECT * FROM users WHERE u_id = ?";
 		
 		
@@ -34,7 +34,15 @@ public class UserDaoImpl implements UserDao
 						user.setUpic(rs.getString("u_pic"));
 						return user;
 					}});
+		user.setUid(uid);
 		
 		return user;
+	}
+
+	@Override
+	public int checkUser(String uid) {
+		String sql = "SELECT COUNT(u_id) FROM users WHERE u_id = ?";
+		int count = connect.getTemplate().queryForObject(sql, new Object[] {uid}, Integer.class);
+		return count;
 	} 
 }

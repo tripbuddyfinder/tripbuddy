@@ -1,4 +1,5 @@
 <%@page language="java" contentType="text/html" pageEncoding="UTF-8" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 
@@ -12,6 +13,9 @@
 
 <body>
 
+	id : ${session.fbsession.uid}
+ help :	${fbsession.uname}
+ <img src="${fbsession.upic}" />
     <form name="userhomepage" action="#" method="post">
 
         <!-----  (header)  ----->
