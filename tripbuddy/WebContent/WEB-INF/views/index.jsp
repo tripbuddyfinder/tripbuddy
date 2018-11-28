@@ -165,7 +165,7 @@
             <img src="resources/images/nainital1.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Nainital</h3>
-              <p id="subheading">Nainital is Kumaon’s biggest town and favorite hill retrea</p>
+              <p id="subheading">Nainital is Kumaonâs biggest town and favorite hill retrea</p>
             </div>
 
           </div>
@@ -176,7 +176,7 @@
             <img src="resources/images/ladakh2.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Leh Ladakh</h3>
-              <p id="subheading">Ladakh’s remarkably well-balanced traditional society has much to teach the West in
+              <p id="subheading">Ladakhâs remarkably well-balanced traditional society has much to teach the West in
                 terms of ecological awareness</p>
             </div>
 
