@@ -10,6 +10,8 @@
   <script src="resources/vendor/jquery/jquery.min.js"></script>
    <script>
         function forwardData(user){
+        
+        console.log(user);
         var session = new Object();
         session.uid =user.id;
         session.uname =user.name;
@@ -37,16 +39,16 @@
         });  
         
         }    
-
         function fblogin() {
             FB.login(function(fbdata) {
                       
 			var url = '/me?fields=id,name,email,location';
 			FB.api(url,'GET',{},function(userdata) {
+			console.log(userdata);
      			 forwardData(userdata);
             });
 
-            }, {scope: 'email'});            
+            }, {scope: 'email,user_location'});            
         }
 
         function logout() {
