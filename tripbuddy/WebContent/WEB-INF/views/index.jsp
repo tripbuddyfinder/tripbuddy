@@ -10,6 +10,8 @@
   <script src="resources/vendor/jquery/jquery.min.js"></script>
    <script>
         function forwardData(user){
+        
+        console.log(user);
         var session = new Object();
         session.uid =user.id;
         session.uname =user.name;
@@ -37,16 +39,16 @@
         });  
         
         }    
-
         function fblogin() {
             FB.login(function(fbdata) {
                       
 			var url = '/me?fields=id,name,email,location';
 			FB.api(url,'GET',{},function(userdata) {
+			console.log(userdata);
      			 forwardData(userdata);
             });
 
-            }, {scope: 'email'});            
+            }, {scope: 'email,user_location'});            
         }
 
         function logout() {
@@ -163,7 +165,7 @@
             <img src="resources/images/nainital1.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Nainital</h3>
-              <p id="subheading">Nainital is Kumaon’s biggest town and favorite hill retrea</p>
+              <p id="subheading">Nainital is Kumaonâs biggest town and favorite hill retrea</p>
             </div>
 
           </div>
@@ -174,7 +176,7 @@
             <img src="resources/images/ladakh2.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Leh Ladakh</h3>
-              <p id="subheading">Ladakh’s remarkably well-balanced traditional society has much to teach the West in
+              <p id="subheading">Ladakhâs remarkably well-balanced traditional society has much to teach the West in
                 terms of ecological awareness</p>
             </div>
 
