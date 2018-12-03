@@ -3,7 +3,7 @@ package org.app.services;
 import org.app.daos.HotelDaoImpl;
 import org.app.models.HotelModel;
 
-public class Hotelservices
+public class HotelService
 {
 	private HotelDaoImpl dao = new HotelDaoImpl();
 	public String addhotel(HotelModel hotel)
