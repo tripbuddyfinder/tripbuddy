@@ -19,15 +19,16 @@
             function connect() {
                 var socket = new SockJS('/tripbuddy/chat');
                 var from = document.getElementById('from').value;
-                var text = 'adduser';
+                var to = document.getElementById('group').value;
+                var text = '';
                 console.log(socket);
                 stompClient = Stomp.over(socket);
                 stompClient.connect({}, function(frame) {
                     setConnected(true);
                     console.log('Connected: ' + frame);
-                    stompClient.send("/app/chat.addUser", {}, 
-                  JSON.stringify({'from':from, 'text':text,'user':'kushu'}));
-                    stompClient.subscribe('/topic/room/', function(messageOutput) {
+                    stompClient.send("/app/chat.msg", {}, 
+                  JSON.stringify({'type':'JOIN', 'content':text,'from':from,'to':to}));
+                    stompClient.subscribe('/topic/room/'+to, function(messageOutput) {
                         showMessageOutput(JSON.parse(messageOutput.body));
                     });
                 });                
@@ -45,8 +46,10 @@
             function sendMessage() {
                 var from = document.getElementById('from').value;
                 var text = document.getElementById('text').value;
+                var to = document.getElementById('group').value;
+                document.getElementById('text').value="";
                 stompClient.send("/app/chat.msg", {}, 
-                  JSON.stringify({'from':from, 'text':text,'user':'kushu'}));
+                  JSON.stringify({'type':'CHAT', 'content':text,'from':from,'to':to , 'time':''}));
             }
              
             function showMessageOutput(messageOutput) {
@@ -55,7 +58,7 @@
                 var p = document.createElement('p');
                 p.style.wordWrap = 'break-word';
                 p.appendChild(document.createTextNode(messageOutput.from + ": " 
-                  + messageOutput.text + " (" + messageOutput.time + ")"));
+                  + messageOutput.content +'('+messageOutput.time+')' ));
                 response.appendChild(p);
             }
         </script>
@@ -63,7 +66,8 @@
     <body onload="disconnect()">
         <div>
             <div>
-                <input type="text" id="from" placeholder="Choose a nickname"/>
+            	<input type="hidden" id="group" value="${gid}"/>
+                <input type="hidden" id="from" value="${fbsession.uname}"/>
             </div>
             <br />
             <div>
@@ -79,6 +83,6 @@
                 <p id="response"></p>
             </div>
         </div>
- 
+ 		
     </body>
 </html>

@@ -44,5 +44,26 @@ public class UserDaoImpl implements UserDao
 		String sql = "SELECT COUNT(u_id) FROM users WHERE u_id = ?";
 		int count = connect.getTemplate().queryForObject(sql, new Object[] {uid}, Integer.class);
 		return count;
+	}
+
+	@Override
+	public int userBlocked(String uid) {
+		String sql = "SELECT COUNT(u_id) FROM blocklist WHERE u_id = ?";
+		int count = connect.getTemplate().queryForObject(sql, new Object[] {uid}, Integer.class);
+		return count;
+	}
+
+	@Override
+	public int getGroup(String uid) {
+		String sql = "SELECT g_id FROM users WHERE u_id = ?";
+		int gid = connect.getTemplate().queryForObject(sql, new Object[] {uid}, Integer.class);
+		return gid;
+	}
+
+	@Override
+	public Object getraw(String uid, String feild) {
+		String sql = "SELECT "+feild+" FROM usergroup WHERE u_id = ?";
+		return connect.getTemplate().queryForObject(sql, new Object[] {uid}, Object.class);
+		
 	} 
 }

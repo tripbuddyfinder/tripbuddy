@@ -18,11 +18,23 @@ public class UserService
 	  else return true;
   }
   
+  public boolean userIsBlocked(String uid) {
+	  int check = dao.userBlocked(uid);
+	  if(check==0)return false;
+	  else return true;
+  }
+  
   public String register(userModel user) {
 	  if(dao.insert(user)>0)
 	  return "saved";
 	  else
 		  return null;
+  }
+  
+  public int getUserGroup(String uid) {
+	  
+	 int gid = dao.getGroup(uid);
+	 return gid;
   }
   
 }
