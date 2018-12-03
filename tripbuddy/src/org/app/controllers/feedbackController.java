@@ -2,7 +2,6 @@ package org.app.controllers;
 
 import org.app.daos.FeedbackDaoImpl;
 import org.app.models.Feedback;
-import org.app.models.userModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
