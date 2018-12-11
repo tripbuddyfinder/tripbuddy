@@ -1,5 +1,7 @@
 package org.app.daos;
 
+import java.util.List;
+
 import org.app.models.userModel;
 
 public interface UserDao 
@@ -9,6 +11,7 @@ public userModel getPofile(String uid);
 public int checkUser(String uid);
 public int userBlocked(String uid);
 public int getGroup(String uid);
+public List<userModel> getUsers(String gid);	
 public Object getraw(String uid,String fieild);
 
-}
+}		

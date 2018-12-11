@@ -1,20 +1,20 @@
 package org.app.models;
 
 public class ChatMessage {
-    private MessageType type;
-    private String content;
+    private String type;
+    private String content;   
     private String from;
     private String to;
     private String time;
-	public enum MessageType {
-        CHAT,
-        JOIN,
-        LEAVE
-    }
-	public MessageType getType() {
+//	public enum MessageType {
+//        CHAT,
+//        JOIN,
+//        LEAVE
+//    }
+	public String getType() {
 		return type;
 	}
-	public void setType(MessageType type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public String getContent() {

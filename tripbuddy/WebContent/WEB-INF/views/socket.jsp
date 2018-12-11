@@ -64,6 +64,7 @@
         </script>
     </head>
     <body onload="disconnect()">
+    ${msgs}
         <div>
             <div>
             	<input type="hidden" id="group" value="${gid}"/>

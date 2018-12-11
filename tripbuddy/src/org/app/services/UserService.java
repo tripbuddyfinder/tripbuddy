@@ -1,5 +1,7 @@
 package org.app.services;
 
+import java.util.List;
+
 import org.app.daos.UserDaoImpl;
 import org.app.models.userModel;
 
@@ -35,6 +37,10 @@ public class UserService
 	  
 	 int gid = dao.getGroup(uid);
 	 return gid;
+  }
+  
+  public List<userModel> fetchUsers(String gid){
+	  return dao.getUsers(gid);
   }
   
 }

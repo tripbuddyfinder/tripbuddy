@@ -2,6 +2,8 @@ package org.app.daos;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
+
 import org.app.crud.connect;
 import org.app.models.userModel;
 import org.springframework.jdbc.core.RowMapper;
@@ -65,5 +67,23 @@ public class UserDaoImpl implements UserDao
 		String sql = "SELECT "+feild+" FROM usergroup WHERE u_id = ?";
 		return connect.getTemplate().queryForObject(sql, new Object[] {uid}, Object.class);
 		
+	}
+
+	@Override
+	public List<userModel> getUsers(String gid) {
+			String sql = "SELECT * FROM users WHERE g_id = ?";
+		List<userModel> users = connect.getTemplate().query(sql, new Object[] {gid}, 
+				new RowMapper<userModel>() {
+					@Override
+					public userModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+						userModel user = new userModel();
+						user.setUid(rs.getString("u_id"));
+						user.setUcity(rs.getString("u_city"));
+						user.setUemail(rs.getString("u_email"));
+						user.setUname(rs.getString("u_name"));
+						user.setUpic(rs.getString("u_pic"));
+						return user;
+					}});
+		return users;
 	} 
 }

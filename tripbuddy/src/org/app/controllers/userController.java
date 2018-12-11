@@ -22,6 +22,8 @@ public class userController
     public @ResponseBody String checkUser(@RequestBody userModel user, RedirectAttributes redirectAttr,Model model) {
 		String ok = "auth";
 		String error = "error";
+		String blocked = "blocked";
+		
 		user.setUpic("https://graph.facebook.com/"+user.getUid()+"/picture?type=large&width=720&height=720");
 		System.out.println("checking user");
 		System.out.println(user);
@@ -42,7 +44,7 @@ public class userController
 			}
 		}
 		else {
-			return "user is blocked";
+			return blocked;
 		}
 		return error;
     }
