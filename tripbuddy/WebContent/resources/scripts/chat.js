@@ -57,7 +57,7 @@ function init(){
 }
 
 	function showMsgs(oldchat){
-		
+		if(oldchat.length>10) $("#totalmsgs").html("already "+oldchat.length+" messages");
 		 for(i=0;i<oldchat.length;i++){
 			 if(oldchat[i].from===username){
 				 appendMessage('you',oldchat[i].content,'me',oldchat[i].time,oldchat[i].type);

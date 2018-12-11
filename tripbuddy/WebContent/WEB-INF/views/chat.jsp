@@ -36,7 +36,7 @@
 			
 			<div>
 				<h2>Kullu Manali Trip</h2>
-				<h3>already 1902 messages</h3>
+				<h3 id="totalmsgs"></h3>
 			</div>
 					</header>
 		<ul id="chat">
