@@ -104,6 +104,19 @@ function init(){
 	 
 	 }
 
+  function changeUi(){
+	  if($(window).width()<735){
+		  $('#userAside').css('width','90px');
+		  $('#userAside li div').css('display','none');
+		  $('#users h2').html('');
+	  }
+	  else{
+		  $('#userAside').css('width','260px');
+		  $('#userAside li div').css('display','inline-block');
+		  $('#users h2').html('TRIPBUDDIES');
+	  }
+	  console.log($(window).width());
+  }
   function sendMessage(type,from,msgText,to,time){
 	 
     stompClient.send("/app/chat.msg", {}, 

@@ -17,13 +17,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="${path}styles/chat.css">
 
+
   
 </head>
 
-<body onload="init()">
+<body onload="init()" onresize="changeUi()">
 	<%@include file="nav1.jsp" %>
   <div id="container">
-	<aside>
+	<aside id="userAside">
 		<header id="users">
 			<h2>TRIPBUDDIES</h2>
 		</header>
@@ -31,7 +32,7 @@
 						
 		</ul>
 	</aside>
-	<main>
+	<main id="userChat">
 		<header>
 			
 			<div>
