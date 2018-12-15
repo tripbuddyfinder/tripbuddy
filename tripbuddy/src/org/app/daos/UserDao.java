@@ -12,6 +12,6 @@ public int checkUser(String uid);
 public int userBlocked(String uid);
 public int getGroup(String uid);
 public List<userModel> getUsers(String gid);	
-public Object getraw(String uid,String fieild);
+public userModel getGrpAdmin(String gid);
 
 }		

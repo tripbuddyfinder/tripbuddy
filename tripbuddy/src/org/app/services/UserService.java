@@ -43,4 +43,8 @@ public class UserService
 	  return dao.getUsers(gid);
   }
   
+  public userModel getGroupAdmin(String gid) {
+	  return dao.getGrpAdmin(gid);
+  }
+  
 }

@@ -6,18 +6,20 @@ var chatpanel = null;
 var stompClient = null;
 var chatinput =null;
 var noti = null;
+var admin=null;
+var uid=null;
 var friendlist = 'http://localhost:8080/tripbuddy/chatroom/fetchlist/1';
 var oldmsgs ='http://localhost:8080/tripbuddy/chatroom/oldmsgs/1';
+var grpAdmin='http://localhost:8080/tripbuddy/chatroom/getAdminId/1';
+var context = 'http://localhost:8080/tripbuddy/profile/';
 function init(){
+	console.log('value of uid'+uid);
 	userlist= get("#userlist");
 	chatpanel= get("#chat");
 	chatform= get("#chat-inputarea");
 	chatinput = get("#chat-input");
-	username=get("#from").value;
-	group=get("#group").value;
 	noti = get("#notification");
-	
-	chatform.addEventListener("submit", function (event) {
+		chatform.addEventListener("submit", function (event) {
 	    event.preventDefault();
 	    var msgText = chatinput.value;
 	    var time = new Date();
@@ -47,15 +49,24 @@ function init(){
                     }
                 });
                 });  
-     $.get( friendlist, function(response) {
-                	  addUserList(response);
-                	});
+     
+     $.get(grpAdmin, function(response) {   	 
+		   admin= response;
+		   $.get( friendlist, function(response) {
+		 	  addUserList(response);
+ 	});});
      $.get( oldmsgs, function(response) {
     	 console.log(response);
    	  showMsgs(response);
    	});
 }
-
+	function RemoveSendButton(){
+		var status="completed";
+		$('#chat-inputarea').css('display','none');
+		$('#chat').css('height','450px');
+		$('#footer').css('height','60px');
+		get('#footer').insertAdjacentHTML("beforeend",'<div style="text-align:center;color:#8f8f8f;height:30px;">You cant send message to completed trip.</div>');
+	}
 	function showMsgs(oldchat){
 		if(oldchat.length>10) $("#totalmsgs").html("Already "+oldchat.length+" messages");
 		 for(i=0;i<oldchat.length;i++){
@@ -101,9 +112,17 @@ function init(){
   
   function addUserList(users){
 	 
+	 
 	  for(i=0;i<users.length;i++){
-	  var data = '<li id="'+removeSpace(users[i].uname)+'data"><img src="'+users[i].upic+'" alt="" class="userimage"><div><h2 >'+users[i].uname+'</h2><h3>'+
-				'<span class="status orange"></span>&nbsp;offline</h3></div></li>';
+		 var name=users[i].uname;
+		
+		  if(name===username)name=' You';
+		  if(users[i].uname===admin.uname)name+='<p style="font-size:12px;float:right;">&nbsp;(Admin)</p>';
+		  
+		   var data = '<li id="'+removeSpace(users[i].uname)+
+		   				'data" onclick="showlinks(this);"><a href="'+context+users[i].uid+'"><img src="'+smallPic(users[i].upic)+
+		   				'" alt="View Profile" class="userimage"></a><div><h2 >'+name+'</h2><h3>'+
+				'<span class="status orange"></span>&nbsp;offline</h3></div></li>'+getLinks(users[i]);
 	  userlist.insertAdjacentHTML("beforeend", data);
 	  }
 	  onlineStatus(username);
@@ -111,6 +130,38 @@ function init(){
 
 
 // Utils
+  
+  function getLinks(user)
+  {
+	  if(uid===admin.uid){
+	  if(user.uid===admin.uid)
+			return	'<div id="'+removeSpace(user.uname)+'links" class="links"><li><a href="'+context+user.uid+'">View Profile</a></li><li><a href="#" onclick="removeGrp()">Abandon your plan</a></li></div>';
+	 
+	  else
+			return	'<div id="'+removeSpace(user.uname)+'links" class="links"><li><a href="'+context+user.uid+'">View Profile</a></li><li><a href="#" onclick="removeYurself('+user.uid+')">Remove this user</a></li></div>';
+	  
+	  }
+	  else {
+		  if(user.uid===uid)
+		return	'<div id="'+removeSpace(user.uname)+'links" class="links"><li><a href="'+context+user.uid+'">View Profile</a></li><li><a href="#" onclick="removeYurself('+user.uid+')">Nnot intrested? </a></li></div>';
+		  else
+			  return	'<div id="'+removeSpace(user.uname)+'links" class="links"><li><a href="'+context+user.uid+'">View Profile</a></li>';
+	  }
+  }
+  
+  
+  
+  function smallPic(link){
+	  return link.substr(0,link.indexOf('?'))+"?type=small";
+  }
+  
+  function showlinks(tag){
+	  var height = 'auto';
+	  var tagId="#"+((tag.id).replace('data',''))+"links";
+	  height= (($(tagId).css('height'))==='0px') ? '70px':'0px';
+	  $('.links').css('height','0px');
+	  $(tagId).css('height',height);
+  }
 function get(selector) {var root = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
     return root.querySelector(selector);
   }
@@ -121,16 +172,23 @@ function removeSpace(String){
       var time = new Date(time);
       var now = new Date();
       var t12 = tConv24(time.getHours()+":"+time.getMinutes());
+      if(time.getYear()===now.getYear()){
       if(now.getDay()===time.getDay() && now.getMonth()===time.getMonth()){
           return t12+", Today";
       }  
       else if((now.getDay()-1)===time.getDay() && now.getMonth()===time.getMonth()){
     	  return t12+", Yesterday";
       }
-      else{
+      else {
           return t12+", "+time.getDate()+"-"+(time.getMonth()+1);
       }
-      
+      }
+      else{
+    	  return t12+", "+time.getDate()+"-"+(time.getMonth()+1)+"-"+(time.getFullYear().toString()).substr(2,3);
+      }
+      }
+  
+  
       function tConv24(time24) {
     	  var ts = time24;    	  
     	  var H = +ts.substr(0, 2);
@@ -143,5 +201,5 @@ function removeSpace(String){
     	  return ts;
     	};
 
-  }
+  
     

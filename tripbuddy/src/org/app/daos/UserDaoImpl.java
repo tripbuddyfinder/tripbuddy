@@ -22,22 +22,7 @@ public class UserDaoImpl implements UserDao
 	@Override
 	public userModel getPofile(String uid) {
 		String sql = "SELECT * FROM users WHERE u_id = ?";
-		
-		
-		
-		userModel user = connect.getTemplate().queryForObject(sql, new Object[] {uid}, 
-				new RowMapper<userModel>() {
-					@Override
-					public userModel mapRow(ResultSet rs, int rowNum) throws SQLException {
-						userModel user = new userModel();
-						user.setUcity(rs.getString("u_city"));
-						user.setUemail(rs.getString("u_email"));
-						user.setUname(rs.getString("u_name"));
-						user.setUpic(rs.getString("u_pic"));
-						return user;
-					}});
-		user.setUid(uid);
-		
+		userModel user = connect.getTemplate().queryForObject(sql, new Object[] {uid},new userModelMapper());
 		return user;
 	}
 
@@ -63,27 +48,34 @@ public class UserDaoImpl implements UserDao
 	}
 
 	@Override
-	public Object getraw(String uid, String feild) {
-		String sql = "SELECT "+feild+" FROM usergroup WHERE u_id = ?";
-		return connect.getTemplate().queryForObject(sql, new Object[] {uid}, Object.class);
+	public userModel getGrpAdmin(String gid) {
+		String sql = "SELECT * FROM users WHERE u_id=(SELECT u_id FROM usergroup WHERE usergroup.g_id=?)";
+		return connect.getTemplate().queryForObject(sql, new Object[] {gid}, new userModelMapper() );
 		
 	}
 
 	@Override
 	public List<userModel> getUsers(String gid) {
 			String sql = "SELECT * FROM users WHERE g_id = ?";
-		List<userModel> users = connect.getTemplate().query(sql, new Object[] {gid}, 
-				new RowMapper<userModel>() {
-					@Override
-					public userModel mapRow(ResultSet rs, int rowNum) throws SQLException {
-						userModel user = new userModel();
-						user.setUid(rs.getString("u_id"));
-						user.setUcity(rs.getString("u_city"));
-						user.setUemail(rs.getString("u_email"));
-						user.setUname(rs.getString("u_name"));
-						user.setUpic(rs.getString("u_pic"));
-						return user;
-					}});
+		List<userModel> users = connect.getTemplate().query(sql, new Object[] {gid},new userModelMapper());
 		return users;
 	} 
+	
+	
+}
+
+class userModelMapper implements RowMapper<userModel>{
+
+	@Override
+	public userModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+		userModel user = new userModel();
+		user.setUcity(rs.getString("u_city"));
+		user.setUemail(rs.getString("u_email"));
+		user.setUname(rs.getString("u_name"));
+		user.setUpic(rs.getString("u_pic"));
+		user.setUid(rs.getString("u_id"));
+		return user;
+	}
+	
+	
 }

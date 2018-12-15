@@ -1,5 +1,7 @@
 package org.app.controllers;
 
+import java.util.List;
+
 import org.app.daos.FeedbackDaoImpl;
 import org.app.models.Feedback;
 import org.springframework.stereotype.Controller;
@@ -8,29 +10,24 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class feedbackController 
 {
-	@RequestMapping(value="/Feedback" ,method=RequestMethod.GET)
-	public String showFeedback()
+	FeedbackDaoImpl dao=new FeedbackDaoImpl();
+		
+	@RequestMapping(value="/feedback" , method=RequestMethod.POST)
+	public @ResponseBody String saveData(@ModelAttribute("FB") Feedback fb)
 	{
-		return "Feedback";
-	}
+		 dao.insertFeedback(fb);
+		  return "done";
+	 }
 	
-@RequestMapping(value="/feedback" , method=RequestMethod.POST)
-public String gettData(@ModelAttribute("FB") Feedback fb , 
-		BindingResult result , Model model)
-{
-	System.out.println("Feedback data getting  Method Excuting");
-	model.addAttribute(fb.getSub());
-	model.addAttribute(fb.getDesc());
-	model.addAttribute(fb.getUid());
-	 System.out.println("Received Data is : " +fb.getSub() + " " + fb.getDesc() + " " + fb.getUid());
-	 System.out.println("insertFeedback() Begin");
-	 FeedbackDaoImpl fbimp=new FeedbackDaoImpl();
-	 fbimp.insertFeedback(fb);
-	 System.out.println("Data Insertion Done");
-	 return "hello";
- }
+	@RequestMapping(value="/fetchfeedback" , method=RequestMethod.GET)
+	public @ResponseBody List<Feedback> getData()
+	{
+		 List<Feedback> data= dao.getFeedbacks();
+		  return data;
+	 }
 }

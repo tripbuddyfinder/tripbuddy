@@ -1,8 +1,8 @@
 package org.app.models;
 
 public class Feedback {
-	private int f_id,uid;
-	private String desc,timestamp,sub;
+	private int f_id;
+	private String desc,timestamp,sub,uid,status;
 	public int getF_id() {
 		return f_id;
 	}
@@ -16,11 +16,11 @@ public class Feedback {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	public int getUid() {
+	public String getUid() {
 		return uid;
 	}
-	public void setUid(int uid) {
-		this.uid = uid;
+	public void setUid(String string) {
+		this.uid = string;
 	}
 	public String getSub() {
 		return sub;
@@ -33,6 +33,12 @@ public class Feedback {
 	}
 	public void setTimestamp(String timestamp) {
 		this.timestamp = timestamp;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 

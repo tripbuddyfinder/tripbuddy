@@ -244,3 +244,16 @@ main footer textarea::placeholder{
 	color:#ddd;
 }
 
+.links {
+	overflow: hidden;
+  transition: all .5s ease-in-out;
+  height: 0;
+  
+  text-align: center;
+ }
+ .links li,.links li a{
+	color:aliceblue;
+	font-size:10px;
+	text-decoration: none;
+ }
+

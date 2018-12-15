@@ -72,6 +72,7 @@
            } 
            
        function redirectUser(response)    {
+       	$('.fb-button').css('display','block');
        		console.log(window.location);
        }    
 </script>
@@ -511,7 +512,7 @@
 
     <!-----   (SIGNIN)   ----->
 
-    <a href="javascript:fblogin()" class="btn btn-default btn-lg zoom" style="position: fixed; opacity:0.8; background-color:rgb(62, 107, 202); right: 3%; bottom: 3%; ">
+    <a href="javascript:fblogin()" class="btn btn-default btn-lg zoom fb-button" style="position: fixed;display:none; opacity:0.8; background-color:rgb(62, 107, 202); right: 3%; bottom: 3%; ">
       <span class="center glyphicon" style="color:white; font-size: 3vmin;"><b> <img src="resources/images/facebookwhite.png"
             style="width:5vmin;">
           LOGIN TO FACEBOOK</b></span></a>

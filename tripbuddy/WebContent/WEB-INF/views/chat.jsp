@@ -42,7 +42,7 @@
 		<ul id="chat">
 						
 		</ul>
-		<footer>
+		<footer id="footer">
 			<form id="chat-inputarea">
 			<textarea id="chat-input" placeholder="Type your message"></textarea>
 			<button type="submit" id="send-button" class="btn btn-info btn-lg">Send</button>
@@ -51,9 +51,13 @@
 	</main>
 </div>
   
- <input type="hidden" id="group" value="${gid}"/>
- <input type="hidden" id="from" value="${uname}"/>
+ <script>
+ uid = '<c:out value="${uid}"/>';
+ username='<c:out value="${uname}"/>';
+ group='<c:out value="${gid}"/>';
+  </script>
  <audio id="notification">
+ 
   <source src="${path}styles/beep.ogg" type="audio/ogg">
 </audio>
 
