@@ -19,8 +19,8 @@
         </p>
         <br>
     </div>
-    <h2><a href="./privacy">Privacy</a></h2>
-    <h2><a href="./terms-and-condition">Terms & Condition</a></h2>
+    <h2><a href="./legal/privacy-policy">Privacy</a></h2>
+    <h2><a href="./legal/term-of-service">Terms & Condition</a></h2>
 
     
 </body>

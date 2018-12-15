@@ -1,0 +1,17 @@
+#data {
+  font-family: Arial;
+  color: #555;
+  margin: 40px;
+  text-align:center;
+}
+
+#data h1 {
+  font-size: 5em;
+}
+
+#data h2 {
+  color: #777;
+}
+#data h2 a{
+	text-decoration: none;
+}

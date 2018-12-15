@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Terms and conditions - TripBuddyFinder</title>
 </head>
 <body>
 <h1>Terms and conditions</h1>
@@ -127,11 +127,7 @@ at any time, effective upon posting of an updated version of this Agreement on t
 
 do, we will revise the updated date at the bottom of this page. Continued use of the Website after any 
 
-such changes shall constitute your consent to such changes. Policy was created with <a 
-
-style="color:#222" target="_blank" title="Create terms and conditions" 
-
-href="https://www.websitepolicies.com/terms-and-conditions-generator">WebsitePolicies.com</a></p>
+such changes shall constitute your consent to such changes.</p>
 
 <h2>Acceptance of these terms</h2>
 
