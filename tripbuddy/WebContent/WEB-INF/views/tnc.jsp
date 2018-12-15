@@ -3,10 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Terms and conditions - TripBuddyFinder</title>
+	<meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Terms and conditions - TripBuddyFinder</title>
 </head>
-<body>
+<body style="background-color:#c5c5c5;">
+<%@include file="Header.jsp" %>
 <h1>Terms and conditions</h1>
 
 <p>These terms and conditions (&quot;Terms&quot;, &quot;Agreement&quot;) are an agreement between 
@@ -144,5 +149,7 @@ Services.</p>
 <p>If you have any questions about this Agreement, please contact us.</p>
 
 <p>This document was last updated on December 14, 2018</p>
+
+<%@include file="Footer.jsp" %>
 </body>
 </html>

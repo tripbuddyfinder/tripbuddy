@@ -162,21 +162,8 @@
     </div>
 
 
-
-    <br><br>
     <%@include file="Footer.jsp" %>
-    <!-----   (FOOTER)   ----->
-
-  <!--  <div style="background-color:black">
-        <br><br>
-        <p class="fix " style="font-family: Bookman Old Style;  font-size: 20px; color:white; text-align: center; font-style: italic;">
-            <b> Copyright &copy; 2018 Trip Buddy Finder</b>
-        </p>
-        <br>
-    </div>-->  
-
-
-
+   
 
 </body>
 

@@ -21,7 +21,7 @@
 </head>
 
 <body onload="init()">
-
+	<%@include file="nav1.jsp" %>
   <div id="container">
 	<aside>
 		<header id="users">
@@ -56,11 +56,11 @@
  username='<c:out value="${uname}"/>';
  group='<c:out value="${gid}"/>';
   </script>
- <audio id="notification">
- 
+ <audio id="notification"> 
   <source src="${path}styles/beep.ogg" type="audio/ogg">
 </audio>
 
+<%@include file="Footer.jsp" %>
 </body>
 
 </html>

@@ -17,7 +17,7 @@ public class feedbackController
 {
 	FeedbackDaoImpl dao=new FeedbackDaoImpl();
 		
-	@RequestMapping(value="/feedback" , method=RequestMethod.POST)
+	@RequestMapping(value="/saveFeedback" , method=RequestMethod.POST)
 	public @ResponseBody String saveData(@ModelAttribute("FB") Feedback fb)
 	{
 		 dao.insertFeedback(fb);
