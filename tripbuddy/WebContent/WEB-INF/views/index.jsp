@@ -81,25 +81,19 @@
 
 <body onload="redirectUser('response') " >
 
-<h2><a href="./addhotels">Add Hotels</a></h2>
+
 
   <form name="login" action="#" method="post">
 
-    <!-----  (header)  ----->
+      <!-----  (navbar)  ----->
 
-    <div class="header" style="font-size:20px">
-      <h3>Trip Buddy Finder</h3>
-    </div>
-
-    <div id="home">
-    </div>
-    <div id="homes">
-      <nav class="navbar navbar-inverse">
+      <div id="navbar" style="position: fixed; width: 100%;">
+        <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
 
 
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar1">
 
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -110,7 +104,7 @@
             </a>
           </div>
 
-          <div class="collapse navbar-collapse navbar-right" id="Navbar">
+          <div class="collapse navbar-collapse navbar-right" id="Navbar1">
 
             <ul class="nav navbar-nav  navbar-right">
               <li><a href="#about"><span class="glyphicon glyphicon-globe"></span> About</a></li>
@@ -130,19 +124,32 @@
     </div>
 
     <script>
-      window.onscroll = function () { myFunction() };
-
-      var navbar = document.getElementById("homes");
-      var sticky = navbar.offsetTop;
-
-      function myFunction() {
-        if (window.pageYOffset >= sticky) {
-          navbar.classList.add("sticky")
-        } else {
-          navbar.classList.remove("sticky");
+        var prevScrollpos = window.pageYOffset;
+        window.onscroll = function() {
+        var currentScrollPos = window.pageYOffset;
+          if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = "0";
+          } else {
+            document.getElementById("navbar").style.top = "-50px";
+          }
+          prevScrollpos = currentScrollPos;
         }
-      }
-    </script>
+        </script>
+
+
+        <!-----  (header)  ----->
+        <br><br><br>
+
+        <div class="header container-fluid" style="background-color:black">
+            <br>
+        <div class="trip" style="font-size: 8vmin; font-family: bookmanold style; color:orangered;">
+            <b>Trip<span style="color:white; font-size: 100%;">Buddy</span>
+            <span class="glyphicon glyphicon-search" style="font-size: 120%;"></span>  
+            </b>
+        </div>
+          
+        <br>
+        </div>
     <!-----   (slide-show)   ----->
 
 
@@ -155,7 +162,9 @@
             <img src="resources/images/taj2.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Taj Mahal</h3>
-              <p id="subheading">Taj Mahal is the white domed marble mausoleum at Agra in India, one of the most
+              <p id="subheading">Taj Mahal is the white domed marble mausoleum at Agra in India, one 
+
+of the most
                 admired monuments in the world</p>
             </div>
           </div>
@@ -166,7 +175,7 @@
             <img src="resources/images/nainital1.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Nainital</h3>
-              <p id="subheading">Nainital is Kumaonâs biggest town and favorite hill retrea</p>
+              <p id="subheading">Nainital is KumaonÃ¢ÂÂs biggest town and favorite hill retrea</p>
             </div>
 
           </div>
@@ -177,7 +186,9 @@
             <img src="resources/images/ladakh2.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Leh Ladakh</h3>
-              <p id="subheading">Ladakhâs remarkably well-balanced traditional society has much to teach the West in
+              <p id="subheading">LadakhÃ¢ÂÂs remarkably well-balanced traditional society has much to 
+
+teach the West in
                 terms of ecological awareness</p>
             </div>
 
@@ -189,7 +200,9 @@
             <img src="resources/images/goa.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Goa</h3>
-              <p id="subheading">Goa has so many beaches which offers a complete holiday experience for every traveler</p>
+              <p id="subheading">Goa has so many beaches which offers a complete holiday experience 
+
+for every traveler</p>
             </div>
 
           </div>
@@ -200,7 +213,9 @@
             <img src="resources/images/shimla1.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Manali</h3>
-              <p id="subheading">Travelers assemble here to hang out in the hippie villages around the main town</p>
+              <p id="subheading">Travelers assemble here to hang out in the hippie villages around the 
+
+main town</p>
             </div>
 
           </div>
@@ -229,7 +244,9 @@
       Plan Your Trip
     </div>
     <br><br>
-    <div style="width: 100%;font-family: bookman old stylr; font-size: 30px; color:#006699; width: 100%;" class="container-fluid">
+    <div style="width: 100%;font-family: bookman old stylr; font-size: 30px; color:#006699; width: 
+
+100%;" class="container-fluid">
 
       <div class="col-sm-3 zoom1" style="margin-left:8%;">
         <img src="resources/images/map2.png">
@@ -267,7 +284,9 @@
             <li>Millions of verified user reviews</li><br>
             <li>Save upto 25%</li>
             <br><br>
-            <button class="form-control zoom" style="height:20%; max-width: 70%; font-size: 2vmin"><b>Search Now</b></button>
+            <button class="form-control zoom" style="height:20%; max-width: 70%; font-size: 
+
+2vmin"><b>Search Now</b></button>
           </div>
         </div>
       </div>
@@ -289,7 +308,9 @@
           <div class="thumbnail offer" style="border-color:#006699; border-width :3px;">
             <img src="resources/images/couple3.jpg" style="width:100%; height: 350px;">
           </div>
-          <div style="  position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); color:white; font-family: bookman old style; font-size: 200%; ">
+          <div style="  position: absolute; top: 80%; left: 50%; transform: translate(-50%, -50%); 
+
+color:white; font-family: bookman old style; font-size: 200%; ">
             Couple
           </div>
         </div>
@@ -297,7 +318,9 @@
           <div class="thumbnail offer" style="border-color:#006699; border-width :3px;">
             <img src="resources/images/family2.jpg" style="width:100%;  height: 350px;">
           </div>
-          <div style="  position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); color:white; font-family: bookman old style; font-size: 200%; ">
+          <div style="  position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); 
+
+color:white; font-family: bookman old style; font-size: 200%; ">
             Family
           </div>
         </div>
@@ -305,7 +328,9 @@
           <div class="thumbnail offer" style="border-color:#006699; border-width :3px;">
             <img src="resources/images/friends1.jpg" style="width:100%;  height: 350px;">
           </div>
-          <div style=" position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); color:white; font-family: bookman old style; font-size: 200%; ">
+          <div style=" position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); 
+
+color:white; font-family: bookman old style; font-size: 200%; ">
             Friends
           </div>
         </div>
@@ -313,7 +338,9 @@
           <div class="thumbnail offer" style="border-color:#006699; border-width :3px;">
             <img src="resources/images/single3.jpg" style="width:100%;  height: 350px;">
           </div>
-          <div style=" position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); color:white; font-family: bookman old style; font-size: 200%; ">
+          <div style=" position: absolute; top: 80%; left: 50%;transform: translate(-50%, -50%); 
+
+color:white; font-family: bookman old style; font-size: 200%; ">
             Single
           </div>
         </div>
@@ -337,7 +364,9 @@
         <div class="col-md-3">
           <div class="thumbnail zoom">
             <img src="resources/images/rajan.jpg" style="width:100%; height: 250px; ">
-            <div class="caption" style="color:#006699; font-family: bookman old style; font-size:20px;">
+            <div class="caption" style="color:#006699; font-family: bookman old style; font-
+
+size:20px;">
               <p>Rajan,<br>
                 Easy to use, cheapest price and secured. !
               </p>
@@ -348,7 +377,9 @@
         <div class="col-md-3">
           <div class="thumbnail zoom">
             <img src="resources/images/rahul.jpg" style="width:100%;  height: 250px;">
-            <div class="caption" style="color:#006699; font-family: bookman old style; font-size:20px;">
+            <div class="caption" style="color:#006699; font-family: bookman old style; font-
+
+size:20px;">
               <p>Rahul,<br>
                 I was treated very well thank you. !
               </p>
@@ -359,7 +390,9 @@
         <div class="col-md-3">
           <div class="thumbnail zoom">
             <img src="resources/images/yamini.jpg" style="width:100%;  height: 250px;">
-            <div class="caption" style="color:#006699; font-family: bookman old style; font-size:20px;">
+            <div class="caption" style="color:#006699; font-family: bookman old style; font-
+
+size:20px;">
               <p>Yamini,<br>
                 No extra fees. Simple to use. Satisfide. !
               </p>
@@ -370,7 +403,9 @@
         <div class="col-md-3">
           <div class="thumbnail zoom">
             <img src="resources/images/rita.jpg" style="width:100%;  height: 250px;">
-            <div class="caption" style="color:#006699; font-family: bookman old style; font-size:20px;">
+            <div class="caption" style="color:#006699; font-family: bookman old style; font-
+
+size:20px;">
               <p>Rita,<br>
                 Site is easy to use and great service.!
               </p>
@@ -388,10 +423,14 @@
 
     <div style="background-color:white;">
       <br><br>
-      <div id="services" style="text-align: center;  font-size:220%; color:#006699 ; font-family: Bookman Old Style; font-style:italic; text-transform: uppercase;">
+      <div id="services" style="text-align: center;  font-size:220%; color:#006699 ; font-family: 
+
+Bookman Old Style; font-style:italic; text-transform: uppercase;">
         <b>SERVICES</b></div>
       <br><br>
-      <div class="container-fluid text-center" style="font-size:130%;  color: #006699; font-family: Bookman Old Style; font-style:italic; text-transform: uppercase;">
+      <div class="container-fluid text-center" style="font-size:130%;  color: #006699; font-family: 
+
+Bookman Old Style; font-style:italic; text-transform: uppercase;">
         <div class="row">
 
           <div class="col-sm-4">
@@ -447,7 +486,9 @@
 
     <div style="background-color:#006699">
       <div id="contact" class="container fluid" style="color:white;"><br><br><br>
-        <p style="text-align: center;  font-size:220%; color: white; font-family: Bookman Old Style; font-style:italic; text-transform: uppercase;">
+        <p style="text-align: center;  font-size:220%; color: white; font-family: Bookman Old Style; 
+
+font-style:italic; text-transform: uppercase;">
           <b>CONTACT</b></p>
 
         <div class="col-sm-4 center" style="font-family: bookman old style; font-size: 150%;"><br>
@@ -485,15 +526,25 @@
     <div id="about" class="container fluid" style="color:#006699; font-family:bookman old style; ">
       <br><br>
 
-      <div id="services" style="text-align: center;  font-size:220%; color:#006699 ; font-family: Bookman Old Style; font-style:italic; text-transform: uppercase;">
+      <div id="services" style="text-align: center;  font-size:220%; color:#006699 ; font-family: 
+
+Bookman Old Style; font-style:italic; text-transform: uppercase;">
         <b>ABOUT</b></div>
       <br>
       <p style="font-family: Bookman Old Style; font-style:italic; font-size: 20px;">
-        Trip Buddy Finder is a free web based social network project is a solution for someone to find a travel buddy
-        to travel anywhere in domestic in multi groups, single groups or any type of groups that interest you.
+        Trip Buddy Finder is a free web based social network project is a solution for someone to find 
+
+a travel buddy
+        to travel anywhere in domestic in multi groups, single groups or any type of groups that 
+
+interest you.
         <br><br>
-        This application can act as a single solution to carter all needs of the trip like booking of taxi for pick and
-        drop, booking of hotel rooms to stay according to your need, it will also provide weather information of your
+        This application can act as a single solution to carter all needs of the trip like booking of 
+
+taxi for pick and
+        drop, booking of hotel rooms to stay according to your need, it will also provide weather 
+
+information of your
         dream place.
         <br><br><br><br><br>
       </p>
@@ -503,7 +554,9 @@
 
     <div style="background-color:#006699">
       <br><br>
-      <p style="font-family: Bookman Old Style;  font-size: 20px; color:white; text-align: center; font-style: italic;">
+      <p style="font-family: Bookman Old Style;  font-size: 20px; color:white; text-align: center; 
+
+font-style: italic;">
         <b> Copyright &copy; 2018 Trip Buddy Finder</b>
       </p>
       <br>
@@ -512,8 +565,12 @@
 
     <!-----   (SIGNIN)   ----->
 
-    <a href="javascript:fblogin()" class="btn btn-default btn-lg zoom fb-button" style="position: fixed;display:none; opacity:0.8; background-color:rgb(62, 107, 202); right: 3%; bottom: 3%; ">
-      <span class="center glyphicon" style="color:white; font-size: 3vmin;"><b> <img src="resources/images/facebookwhite.png"
+    <a href="javascript:fblogin()" class="btn btn-default btn-lg zoom fb-button" style="position: 
+
+fixed;display:none; opacity:0.8; background-color:rgb(62, 107, 202); right: 3%; bottom: 3%; ">
+      <span class="center glyphicon" style="color:white; font-size: 3vmin;"><b> <img 
+
+src="resources/images/facebookwhite.png"
             style="width:5vmin;">
           LOGIN TO FACEBOOK</b></span></a>
 

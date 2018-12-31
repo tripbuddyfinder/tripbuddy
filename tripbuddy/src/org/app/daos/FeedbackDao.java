@@ -6,6 +6,6 @@ import org.app.models.Feedback;
 
 public interface FeedbackDao
 {
-	public int insertFeedback(Feedback fb);
+	public String insertFeedback(Feedback fb);
 	public List<Feedback> getFeedbacks();
 }

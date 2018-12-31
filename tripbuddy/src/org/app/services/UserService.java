@@ -47,4 +47,10 @@ public class UserService
 	  return dao.getGrpAdmin(gid);
   }
   
+  
+  public List<userModel> fetchUsers()
+  {
+	return dao.fetchUsers();
+	  
+  }
 }
