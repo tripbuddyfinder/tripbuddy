@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.app.crud.connect;
+import org.app.models.Feedback;
 import org.app.models.userModel;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -61,7 +62,16 @@ public class UserDaoImpl implements UserDao
 		return users;
 	} 
 	
+	public List<userModel> fetchUsers() {
+		
+		String sql="select * from users";
+		List<userModel> users = connect.getTemplate().query(sql, new Object[] {},new userModelMapper());
+		return users;
+		
+	}
 	
+
+
 }
 
 class userModelMapper implements RowMapper<userModel>{
@@ -76,6 +86,7 @@ class userModelMapper implements RowMapper<userModel>{
 		user.setUid(rs.getString("u_id"));
 		return user;
 	}
+	
 	
 	
 }
