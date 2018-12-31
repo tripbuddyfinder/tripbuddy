@@ -8,18 +8,21 @@ import java.util.List;
 
 import org.app.crud.connect;
 import org.app.models.Feedback;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 public class FeedbackDaoImpl  implements FeedbackDao
 {
 	
-	  public int insertFeedback(Feedback fb)
+	  public String insertFeedback(Feedback fb)
 	  {
 		  
-		  String query="insert into feedbacks(sub,desc,uid) values(?,?,?)";
+		  String query="insert into feedbacks(sub,discr,u_id,f_timestamp,f_status) values(?,?,?,?,?)";
 		   
-		return connect.getTemplate().update(query, new Object[] { fb.getSub(), fb.getDesc(), fb.getUid()} );
-		 
+		 JdbcTemplate conn=connect.getTemplate();
+				int i=conn.update(query, new Object[] { fb.getSub(), fb.getDesc(), fb.getUid() , fb.getTimestamp() , fb.getStatus()} );
+				System.out.println("No Of Rows Affected=" +i);
+				return "facebook";
 	  }
 
 	@Override
@@ -32,11 +35,13 @@ public class FeedbackDaoImpl  implements FeedbackDao
 			public Feedback mapRow(ResultSet rs, int rowNum) throws SQLException {
 				Feedback fb = new Feedback();
 				fb.setF_id(rs.getInt("f_id"));
-				fb.setSub(rs.getString("f_sub"));
-				fb.setTimestamp(rs.getTimestamp("f_timestamp").toString());
+				fb.setSub(rs.getString("sub"));
+				fb.setTimestamp(rs.getString("f_timestamp"));
+				String ts=(rs.getString("f_timestamp"));
 				fb.setUid(rs.getString("u_id"));
-				fb.setDesc(rs.getString("desc"));
+				fb.setDesc(rs.getString("discr"));
 				fb.setStatus(rs.getString("f_status"));
+				System.out.println("Only Timestamps=:" +ts);
 				return fb;
 			}});
 	}
