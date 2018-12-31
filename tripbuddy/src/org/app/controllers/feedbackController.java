@@ -2,12 +2,16 @@ package org.app.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.app.daos.FeedbackDaoImpl;
+import org.app.models.ChatMessage;
 import org.app.models.Feedback;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,18 +20,37 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class feedbackController 
 {
 	FeedbackDaoImpl dao=new FeedbackDaoImpl();
+	//iio
+	@RequestMapping(value="feedback" , method=RequestMethod.GET)
+	public String givefeedback()
+	{
+		return "feedback";
+	}
 		
-	@RequestMapping(value="/saveFeedback" , method=RequestMethod.POST)
+	@RequestMapping(value="feedback/saveFeedback" , method=RequestMethod.GET)
 	public @ResponseBody String saveData(@ModelAttribute("FB") Feedback fb)
 	{
+		System.out.println(fb.getUid() + " " + fb.getSub() + " " + fb.getDesc() + " " + fb.getTimestamp() + " " + fb.getStatus());
 		 dao.insertFeedback(fb);
-		  return "done";
+		  return "feedback";
 	 }
 	
-	@RequestMapping(value="/fetchfeedback" , method=RequestMethod.GET)
-	public @ResponseBody List<Feedback> getData()
+	
+	
+//	@RequestMapping(value="/fetchfeedback" , method=RequestMethod.GET)
+//	public @ResponseBody List<Feedback> getData(Model model,HttpSession session)
+//	{
+//		 List<Feedback> data= dao.getFeedbacks();
+//		  return data;
+//	 }
+//	
+	@RequestMapping(value="/fetchfeedbacks" , method=RequestMethod.GET)
+	public String  getDataa(Model model,HttpSession session)
 	{
 		 List<Feedback> data= dao.getFeedbacks();
-		  return data;
+		 model.addAttribute("data", data);
+		  return "ShowFeedbacks";
 	 }
+	
+	
 }
