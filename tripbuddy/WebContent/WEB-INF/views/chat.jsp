@@ -22,7 +22,7 @@
 </head>
 
 <body onload="init()" onresize="changeUi()">
-	<%@include file="user_nav.jsp" %>
+	<%@include file="nav1.jsp" %>
   <div id="container">
 	<aside id="userAside">
 		<header id="users">
@@ -37,8 +37,9 @@
 			
 			<div>
 				<h2>Kullu Manali Trip</h2>
-				<h3 id="totalmsgs"></h3>
+				<h3 id="totalmsgs"></h3>				
 			</div>
+			<input style="float:right;" class="btn btn-primary" type="button" value="Suggest hotels" onclick="getHotels();"/>
 					</header>
 		<ul id="chat">
 						
