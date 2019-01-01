@@ -2,9 +2,12 @@ package org.app.controllers;
 
 
 import java.util.List;
+
 import javax.servlet.http.HttpSession;
+
 import org.app.daos.ChatDaoImpl;
 import org.app.models.ChatMessage;
+import org.app.models.HotelModel;
 import org.app.models.userModel;
 import org.app.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,6 +49,40 @@ public class chatController {
 		return list;
 	}
 	
+	@RequestMapping("/chatroom/getHotels/{group}") 
+	public void gethotelist(Model model,HttpSession session,@PathVariable("group")String group)
+	{
+		ChatMessage waiting = new ChatMessage();
+		waiting.setTo(group);
+		waiting.setType("CHAT");
+		waiting.setFrom("Tripbuddy BOT");
+		waiting.setTime("current");
+		waiting.setContent("Please Wait..\nSearching best hotels for you.");
+		messagingTemplate.convertAndSend("/topic/room/"+group, waiting);
+		List<HotelModel> list=dao.getHotels(group);
+		
+		for(int i=0;i<list.size();i++) {	
+		
+		ChatMessage msg = toMsg(group,list.get(i));		
+		
+		messagingTemplate.convertAndSend("/topic/room/"+group, msg);
+		}
+		
+	}
+	
+	public ChatMessage toMsg(String group,HotelModel model) {
+		String content = "Hotel Name: "+model.getHname()+
+						"\nHotel Price: "+model.getPrice()+
+						"\nBooking link: <a href='"+model.getLink()+"' target='_blank'>Click here</a>";
+		ChatMessage msg = new ChatMessage();
+		msg.setType("CHAT");
+		msg.setFrom("Tripbuddy BOT");
+		msg.setTo(group);
+		msg.setTime("current");
+		msg.setContent(content);
+		return msg;
+		
+	}
 	@RequestMapping("/chatroom/oldmsgs/{group}") 
 	public @ResponseBody List<ChatMessage> getmsgs(Model model,HttpSession session,@PathVariable("group")String group)
 	{
