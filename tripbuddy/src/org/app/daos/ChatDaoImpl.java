@@ -2,10 +2,12 @@ package org.app.daos;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.app.crud.connect;
 import org.app.models.ChatMessage;
+import org.app.models.HotelModel;
 import org.springframework.jdbc.core.RowMapper;
 
 public class ChatDaoImpl implements ChatDao {
@@ -40,9 +42,41 @@ public class ChatDaoImpl implements ChatDao {
 		
 		return msgs;
 	}
-	
-	
+
+	@Override
+	public List<HotelModel> getHotels(String gid) {
+		String query="SELECT destination FROM trip_posts WHERE u_id=(SELECT u_id FROM usergroup WHERE g_id=?)";
+		String q2 = "SELECT * FROM hotels WHERE city= ? OR state=?";
+		String dest = connect.getTemplate().queryForObject(query, new Object[] {gid},String.class);
+		String arr[]= dest.split(" ");
+				
+		List<HotelModel> list = new ArrayList<>();
+		
+		for(int i=0;i<arr.length;i++) {
+		list.addAll(connect.getTemplate().query(q2, new Object[] {arr[i],arr[i]},new HotelMapper()));
+		}
+		
+		return list;
+	}
 	
 	
 
 }
+
+class HotelMapper  implements RowMapper<HotelModel>{
+
+	@Override
+	public HotelModel mapRow(ResultSet rs, int rowNum) throws SQLException {
+		
+		HotelModel model = new HotelModel();
+		model.setState(rs.getString("state"));
+		model.setCity(rs.getString("city"));
+		model.setHname(rs.getString("hname"));
+		model.setPrice(rs.getString("price"));
+		model.setLink(rs.getString("hlink"));
+		
+		return model;
+	}
+	
+}
+
