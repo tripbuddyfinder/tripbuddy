@@ -8,9 +8,10 @@ var chatinput =null;
 var noti = null;
 var admin=null;
 var uid=null;
-var friendlist = 'http://localhost:8080/tripbuddy/chatroom/fetchlist/1';
-var oldmsgs ='http://localhost:8080/tripbuddy/chatroom/oldmsgs/1';
-var grpAdmin='http://localhost:8080/tripbuddy/chatroom/getAdminId/1';
+var friendlist = 'http://localhost:8080/tripbuddy/chatroom/fetchlist/2';
+var oldmsgs ='http://localhost:8080/tripbuddy/chatroom/oldmsgs/2';
+var grpAdmin='http://localhost:8080/tripbuddy/chatroom/getAdminId/2';
+var gethotel='http://localhost:8080/tripbuddy/chatroom/getHotels';
 var context = 'http://localhost:8080/tripbuddy/profile/';
 function init(){
 	console.log('value of uid'+uid);
@@ -60,6 +61,13 @@ function init(){
    	  showMsgs(response);
    	});
 }
+	function getHotels(){		
+		$.get(gethotel+'/'+group, function(response) {	    	
+	   	  showMsgs(response);
+	   	});
+		
+		
+	}
 	function RemoveSendButton(){
 		var status="completed";
 		$('#chat-inputarea').css('display','none');
@@ -80,6 +88,11 @@ function init(){
 		 }		
 	}
   function appendMessage(from,msgText,side,time,type){
+	  if(time==="current"){
+		  time = new Date();
+		  console.log(msgText)
+	  }
+	  
       var youMsg="<li class='you'><div class='entete'> <span class='status green'></span><h2>"+from+" </h2>&nbsp;<h3> "+
           formatTime(time)+"</h3> </div>  <div class='triangle'></div> <div class='message'>"+
               msgText+"</div></li>";
@@ -109,6 +122,9 @@ function init(){
 		  $('#userAside').css('width','90px');
 		  $('#userAside li div').css('display','none');
 		  $('#users h2').html('');
+		  $('#userChat header').css('width','350px');
+		  $('#userChat footer').css('width','350px');
+		  $('#userChat ul').css('width','350px');
 	  }
 	  else{
 		  $('#userAside').css('width','260px');
@@ -207,7 +223,7 @@ function removeSpace(String){
     	  var H = +ts.substr(0, 2);
     	  var m = ts.substr(3, 4);
     	  var h = (H % 12) || 12;
-    	  h = (h < 10)?("0"+h):h;  // leading 0 at the left for 1 digit hours
+    	  h = (h < 10)?("0"+h):h;  //  leading 0 at the left for 1 digit hours
     	  m = (m < 10)?("0"+m):m;
     	  var ampm = H < 12 ? " AM" : " PM";
     	  ts = h +':'+ m + ampm;
