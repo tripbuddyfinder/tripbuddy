@@ -30,13 +30,14 @@ public class AdminController {
 		return "AdminLogin";
 	}
 	
-	@RequestMapping(value="admin/login" , method=RequestMethod.POST)
+	@RequestMapping(value="/login" , method=RequestMethod.POST)
 	public String getLogin(@ModelAttribute("login") AdminModel Amodel , HttpSession session )
 	{
 		System.out.println(Amodel.getAid() + " " + Amodel.getApwd());
 		
 		List <AdminModel> data=service.checkLogin(Amodel); 
 		session.setAttribute("admin", Amodel.getAid());
+		System.out.println(data);
 		return "Dashboard";
 	}
 	

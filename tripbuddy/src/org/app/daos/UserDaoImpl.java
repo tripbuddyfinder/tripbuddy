@@ -70,6 +70,29 @@ public class UserDaoImpl implements UserDao
 		
 	}
 	
+	public int blockUser(String uid)
+	{
+		String sql="insert into blocklist(u_id) value(?)";
+		int i = connect.getTemplate().update(sql, new Object[] {uid});
+		return i;
+	}
+	
+	public int unblockUser(String uid)
+	{
+		String sql="delete from blocklist where u_id=?";
+		int i = connect.getTemplate().update(sql, new Object[] {uid});
+		return i;
+	}
+	
+	public List<userModel> blockedUser()
+	{
+		String sql="select * from blocklist join users on blocklist.u_id = users.u_id";
+		List<userModel> busers = connect.getTemplate().query(sql, new Object[] {},new userModelMapper());
+		System.out.println(busers);
+		return busers;
+		
+	}
+	
 
 
 }

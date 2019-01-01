@@ -53,4 +53,17 @@ public class UserService
 	return dao.fetchUsers();
 	  
   }
+  
+  public int blockUser(String uid) {
+	  return dao.blockUser(uid);
+  }
+  
+  public int unblockUser(String uid) {
+	  return dao.unblockUser(uid);
+  }
+  
+  public List<userModel> blockedUsers()
+  {
+	  return dao.blockedUser();
+  }
 }

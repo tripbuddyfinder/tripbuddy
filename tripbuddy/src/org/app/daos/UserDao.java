@@ -13,5 +13,8 @@ public int userBlocked(String uid);
 public int getGroup(String uid);
 public List<userModel> getUsers(String gid);	
 public userModel getGrpAdmin(String gid);
+public int blockUser(String uid);
+public int unblockUser(String uid);
+public List<userModel>blockedUser();
 
 }		

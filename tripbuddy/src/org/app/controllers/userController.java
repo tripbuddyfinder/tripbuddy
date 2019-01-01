@@ -9,6 +9,7 @@ import org.app.models.userModel;
 import org.app.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -65,6 +66,37 @@ public class userController
 		System.out.println(userlist);
 		return "ShowUsers";
 	}
+	
+	@RequestMapping(value="userActionn/{block}/{uid}" ,method=RequestMethod.GET) public String blockUser(@PathVariable("uid") String uid , HttpSession  session)
+	{	
+		String sid= (String)session.getAttribute("admin");
+		System.out.println("SID:"+sid);
+		if(sid!=null) {
+		service.blockUser(uid);
+		return "tester";
+		}
+		else {
+		return "Showusers";
+	}
+	}
+	
+	
+
+	@RequestMapping(value="userAction/{uid}/{unblock}" ,method=RequestMethod.GET) public String unblockUser(@PathVariable("uid") String uid)
+	{	
+		System.out.println("un-Blocked User ID:"+uid);
+		service.unblockUser(uid);
+		return "tester";
+	}
+	
+	@RequestMapping(value="/blockusers",method=RequestMethod.GET)
+	public String showBlockusers(Model model) {
+		List<userModel> busers=service.blockedUsers();
+		model.addAttribute("blocklist",busers);
+		System.out.println(busers);
+		return "BlockUsers";
+	}
+	
 	}
 		
 

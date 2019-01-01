@@ -42,20 +42,18 @@
 
 
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#review"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                        <li><a href="#review"><span class="glyphicon glyphicon-log-out"></span> Home</a></li>
                     </ul>
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#about"><span class="glyphicon glyphicon-globe"></span> Plan</a></li>
+                        <li><a href="#about"><span class="glyphicon glyphicon-globe"></span> User</a></li>
                     </ul>
                     <ul class="nav navbar-nav">
-                        <li><a href="#contact"> <span class="glyphicon glyphicon-phone"></span> Chat</a></li>
+                        <li><a href="#contact"> <span class="glyphicon glyphicon-phone"></span> Profile</a></li>
                     </ul>
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#services"><span class="glyphicon glyphicon-tasks"></span> Help</a></li>
+                        <li><a href="#services"><span class="glyphicon glyphicon-tasks"></span> Logout</a></li>
                     </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#review"><span class="glyphicon glyphicon-list-alt"></span> Profile</a></li>
-                    </ul>
+                   
                 </div>
             </div>
         </nav>

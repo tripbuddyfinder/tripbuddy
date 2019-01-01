@@ -1,0 +1,122 @@
+ul {
+    color: white;
+    font-family: Bookman Old Style;
+    font-size: 130%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    }
+
+.header
+{
+        font-family: algerian;
+    }
+
+li 
+{
+    float: left;
+
+}
+
+
+li a
+{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+}
+
+#navbar
+{
+    opacity:0.9; 
+    display: block;
+    z-index: 99999;
+    transition: top 0.3s;
+
+}
+ .search:hovera
+ {
+    filter: blur(2px);
+  
+  }
+
+.sticky {
+    z-index: 99999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+ 
+.search
+{
+    background-color: orangered;
+}
+
+.sticky +.search 
+ {
+    padding-top: 60px;
+}
+
+.search1
+{
+    opacity: 1; 
+    max-width: 100%; 
+    position: absolute;
+    top: 50%; 
+    left: 10%;
+    color:white; 
+    font-family: bookman old style;
+    font-size: 3.5vmin; 
+    transition: .5s ease;
+}
+
+.search1 {
+  
+    opacity:0;
+    
+  }
+  
+  .search:hover .search1 {
+    opacity: 1;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray; 
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: gainsboro; 
+}
+
+.zoom:hover 
+{
+    transform: scale(1.08); 
+}
+ 
+.change:hover
+{
+opacity: 0.7;
+}
+
+.zoom:hover.weather 
+{
+    opacity: 0.8; 
+}
+
+background-image
+{
+    filter: blur(8px);
+    opacity: 0.1;
+}

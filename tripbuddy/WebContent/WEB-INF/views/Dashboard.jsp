@@ -1,21 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-
 <html>
 
 <head>
+    <link rel="stylesheet" href="resources/styles/dashboard.css">
     <link rel="stylesheet" href="userhome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <title>Add Hotels </title>
+	
+
 </head>
 
 <body>
 
-    <!-----  (navbar)  ----->
+
+<!-- 
+    <!-----  sds(navbar)  ----->
 
     <div id="navbar" style="position: fixed; width: 100%;">
         <nav class="navbar navbar-inverse">
@@ -31,29 +35,19 @@
                         <span class="glyphicon glyphicon-home"><span class="active"> HOME</span></span>
                     </a>
                 </div>
-
+				
                 <div class="collapse navbar-collapse navbar-right" id="Navbar1">
 
 
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#review"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                        <li><a href="../logout"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
                     </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#about"><span class="glyphicon glyphicon-globe"></span> Plan</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#contact"> <span class="glyphicon glyphicon-phone"></span> Chat</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#services"><span class="glyphicon glyphicon-tasks"></span> Help</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#review"><span class="glyphicon glyphicon-list-alt"></span> Profile</a></li>
-                    </ul>
-                </div>
+                   </div>
             </div>
         </nav>
+        
     </div>
+     -->
 
 
     <script>
@@ -87,45 +81,67 @@
 
 
 
-    <!-----   (ADD HOTEL)   ----->
+    <!-----   (Profile)   ----->
+    
+    <div class="navbar">
+<br>
+    <div class="col-sm-2" style=" background-color: rgb(255, 255, 255);">
+    <center>
+        <a href="fetchusers" style="font-family:bookmanold style; font-size:150%;">VIEW USER</a><br>
+        <a href="fetchfeedbacks" style="font-family:bookmanold style; font-size:150%;">VIEW FEEDBACK</a><br>
+        <a href="addhotels" style="font-family:bookmanold style; font-size:150%;">ADD HOTEL</a><br>
+        <a href="blockusers" style="font-family:bookmanold style; font-size:150%;">BLOCK USERS</a><br>
+    </center>
+    </div>
 
-    <form action="hotels/addhotels" modelAttribute="hotels">
+    <div class="col-sm-10" style=" background-color: rgb(255, 255, 255);">
         <center>
-            <div style=" background-image: url(image/black.jpg); background-size: 100% 100%; text-transform: uppercase; color: white; font-family: bookmanold style; font-size: 200%;">
 
-                <p style="font-size:250%; color: rgb(153, 145, 173);">ADD HOTELS</p>
-                <hr style="border:1px solid rgb(216, 204, 204); ">
-                <br>
-                Hotel Name<br><input type="text" name="hname" class="form-control" style="width:20%"><br>
+            <table style="font-family: bookmanold style; font-size: 150%;">
+                <tr style=" width: 100%;">
+                    <th>NAME</th>
+                    <th>CITY</th>
+                    <th>E-MAIL</th>
+                    
+                    
+                </tr>
+                 <c:forEach var="user" items="${userlist}" >
+                <tr>
+                   
+     <tr>
+      
+      <td>${user.uname}</td> 
+      <td>${user.ucity}</td>
+      <td>${user.uemail}</td>
+      <td><img src="${user.upic}" alt="Not available" style="width:150px;"/></td>
+      
+                    
+                    <td style="margin-right:10%; "><br><br>
+                        <span><button  class="form-control" style=" width: 100%; background-color: rgb(173, 27, 27); color: white"  value="${user.uid}" id="btn1" onclick="getdata()">Block</button></span>
+                        <span><br><button  class="form-control" style=" width: 100%; background-color: rgb(12, 102, 39); color: white"  value="${user.uid}" id="btn2" onclick="getdata()">UnBlock</button><br><br></td></span>
+                </tr>
 
-                State<br><input type="text" name="state" class="form-control" style="width:20%"><br>
-                
-                City<br><input type="text" name="city" class="form-control" style="width:20%"><br>
-                
-                Price Per Night<br><input type="number" name="price" class="form-control" style="width:20%"><br>
-                
-                Booking link<br><input type="number" name="rating" class="form-control" style="width:20%"><br>
-                
-                <hr style="border:1px solid rgb(216, 204, 204); ">
-                <input type="submit" value="SUBMIT" class="form-control zoom" style="width:40%; height: 1%;  border-radius: 50px; font-size:150%; color: white; background-color: rgb(4, 4, 24)">
-                <hr style="border:1px solid rgb(216, 204, 204); ">
-                
-                <br><br>
-            </div>
+</c:forEach>
+            </table>
+            
+
         </center>
-    </form>
+    </div>
 
-
-
+    </div>
+    <br>
+    
+    
     <!-----   (FOOTER)   ----->
 
-    <div style="background-color:black">
-        <br><br>
-        <p style="font-family: Bookman Old Style;  font-size: 20px; color:white; text-align: center; font-style: italic;">
-            <b> Copyright &copy; 2018 Trip Buddy Finder</b>
-        </p>
-        <br>
-    </div>
+        <div style="background-color:black">
+            <br><br>
+            <p style="font-family: Bookman Old Style;  font-size: 20px; color:white; text-align: center; font-style: italic;">
+                <b> Copyright &copy; 2018 Trip Buddy Finder</b>
+            </p>
+            <br>
+        </div>
+    
 
 
 </body>
