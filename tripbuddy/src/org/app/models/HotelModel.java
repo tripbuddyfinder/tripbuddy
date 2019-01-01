@@ -2,7 +2,7 @@ package org.app.models;
 
 public class HotelModel 
 {
-	private String hname , state , city, price , rating;
+	private String link,hname , state , city, price;
 
 	public String getHname() {
 		return hname;
@@ -11,6 +11,7 @@ public class HotelModel
 	public void setHname(String hname) {
 		this.hname = hname;
 	}
+	
 
 	public String getState() {
 		return state;
@@ -36,12 +37,13 @@ public class HotelModel
 		this.price = price;
 	}
 
-	public String getRating() {
-		return rating;
+	public String getLink() {
+		return link;
 	}
 
-	public void setRating(String rating) {
-		this.rating = rating;
+	public void setLink(String link) {
+		this.link = link;
 	}
-	
+
+		
 }
