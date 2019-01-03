@@ -20,10 +20,10 @@ public class homeController {
 	@RequestMapping(value="/home" , method=RequestMethod.GET)
 	public String userhome( Model model,HttpSession session)
 	{
-			//userModel user = (userModel) session.getAttribute("fbsession");
-			//if(user==null)user=new userModel(); //return "index";
-		//model.addAttribute("fbsession", user);
-
+			userModel user = (userModel) session.getAttribute("fbsession");
+			if(user==null) { user=new userModel(); return "index"; }
+			
+			model.addAttribute("fbsession", user);
 			List<PostModel> trips=service.getAllTripPosts();
 			model.addAttribute("trips", trips);
 			System.out.println(trips);

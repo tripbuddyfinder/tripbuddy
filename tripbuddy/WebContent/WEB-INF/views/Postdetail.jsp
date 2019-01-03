@@ -7,7 +7,7 @@
 <html>
 
 <head>
-	<title>Trip to ${trip.destination}	 ~ TRIPBUDDYFINDER</title>
+	<title>Trip to ${trips[0].destination} ~ TRIPBUDDYFINDER</title>
     <link rel="stylesheet" href="/resources/styles/userhome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -42,19 +42,19 @@
           		<p><strong class="glyphicon glyphicon-user"></strong> 5</p>               
                 <p><strong class="glyphicon glyphicon-map-marker"></strong>${trip.source} To ${trip.destination}</p>
                 <p><strong class="glyphicon glyphicon-calendar"></strong>${trip.pdate}</p>
-                <p><strong></strong><img src="/tripbuddy/resources/images/rupee.jpeg" style="width: 28px;">${trip.cost }</p>
+                <p><strong></strong><img src="/tripbuddy/resources/images/rupee.jpeg" style="width: 28px;">${trip.cost}</p>
                 <p><strong class="glyphicon glyphicon-globe"></strong>${trip.info}</p>
                 <div class="form-control" style="text-align:center;width:50%; font-size: 4vmin; height: 10%; background-image: linear-gradient(to right, rgb(54, 69, 211), rgb(82, 231, 77)); color: black">
                     INVITE FRIENDS<br>
-                   <a href="https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${postid}"><img src="/tripbuddy/resources/images/facebook.png" style="width:8%;"></a>
-                   <a href="whatsapp://send?text=Lets go to a trip..! https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${postid}"> <img src="/tripbuddy/resources/images/whatsapp.png" style="width:8%;"></a>
+                   <a href="https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"><img src="/tripbuddy/resources/images/facebook.png" style="width:8%;"></a>
+                   <a href="whatsapp://send?text=Lets go to a trip..! https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"> <img src="/tripbuddy/resources/images/whatsapp.png" style="width:8%;"></a>
                 </div>
             
             </div>
             
             <div class="panel-footer text-center" style="background-color:gainsboro;">
             
-                            <button class="btn btn-primary btn-lg zoom" style="background-color:black; color: white; font-size: 5vmin; widows: 100vmin;;">Join Now</button> 
+                            <a href="/tripbuddy/joinroom/${trip.postid}" class="btn btn-primary btn-lg zoom" style="background-color:black; color: white; font-size: 5vmin; widows: 100vmin;;">Join Now</a> 
 
 
                 </div>

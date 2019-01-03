@@ -12,8 +12,8 @@
 <mvc:annotation-driven/>
 <mvc:resources mapping="/resources/**" location="/resources/" />
 
-<mvc:view-controller path="legal/term-of-service" view-name="tnc"/>
-<mvc:view-controller path="legal/privacy-policy" view-name="privacy"/>
+<mvc:view-controller path="term-of-service" view-name="tnc"/>
+<mvc:view-controller path="privacy-policy" view-name="privacy"/>
 <mvc:view-controller path="feedback" view-name="feedback"/>
 
 <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">  

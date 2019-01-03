@@ -4,11 +4,14 @@ package org.app.controllers;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.app.models.PostModel;
 import org.app.services.PostServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -47,6 +50,13 @@ public class TrippostController
 		return "Postdetail";
 	}
 	
+	@RequestMapping(value="/joinroom/{postid}/{userid}")
+	public String joinRoom(HttpSession session,Model model, @PathVariable("postid")String postid, @PathVariable("userid")String userid)
+	{
+		
+		
+		return null;
+	}
 	
 //	@RequestMapping(value="/Home", method=RequestMethod.GET)
 //	public String showTrips(Model model) {

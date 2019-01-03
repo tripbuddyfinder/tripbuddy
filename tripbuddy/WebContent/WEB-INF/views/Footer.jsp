@@ -19,9 +19,9 @@ color:#d4d4d4;
         </p>
         <p style="font-family: Bookman Old Style;font-style: italic;  font-size: 20px; color:white; text-align: center; ">
             <b id="footer-links" style="font-size: 15px;">  
-            <a href="./feedback">Send feedback</a> &nbsp; &nbsp; &nbsp;
-             <a href="./legal/privacy-policy">Privacy Policy</a> &nbsp; &nbsp; &nbsp;
-              <a href="./legal/term-of-service">Terms &#38; Conditions</a>
+            <a href="/tripbuddy/feedback">Send feedback</a> &nbsp; &nbsp; &nbsp;
+             <a href="/tripbuddy/privacy-policy">Privacy Policy</a> &nbsp; &nbsp; &nbsp;
+              <a href="/tripbuddy/term-of-service">Terms &#38; Conditions</a>
               </b>
         </p>
         <br>
