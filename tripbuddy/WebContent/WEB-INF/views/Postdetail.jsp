@@ -7,6 +7,7 @@
 <html>
 
 <head>
+	<title>Trip to ${trip.destination}	 ~ TRIPBUDDYFINDER</title>
     <link rel="stylesheet" href="/resources/styles/userhome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,7 +17,7 @@
 
 <body>
 
-    <form name="postdetails" action="#" method="post">
+    
 
     <!-----   (post trip)   ----->
 
@@ -43,9 +44,10 @@
                 <p><strong class="glyphicon glyphicon-calendar"></strong>${trip.pdate}</p>
                 <p><strong></strong><img src="/tripbuddy/resources/images/rupee.jpeg" style="width: 28px;">${trip.cost }</p>
                 <p><strong class="glyphicon glyphicon-globe"></strong>${trip.info}</p>
-                <div class="form-control" style="width:50%; font-size: 4vmin; height: 10%; background-image: linear-gradient(to right, rgb(54, 69, 211), rgb(82, 231, 77)); color: black">
+                <div class="form-control" style="text-align:center;width:50%; font-size: 4vmin; height: 10%; background-image: linear-gradient(to right, rgb(54, 69, 211), rgb(82, 231, 77)); color: black">
                     INVITE FRIENDS<br>
-                    <img src="/resources/images/facebookblue.png" style="width:8%;"> <img src="/resources/images/whatsapp.png" style="width:8%;">
+                   <a href="https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${postid}"><img src="/tripbuddy/resources/images/facebook.png" style="width:8%;"></a>
+                   <a href="whatsapp://send?text=Lets go to a trip..! https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${postid}"> <img src="/tripbuddy/resources/images/whatsapp.png" style="width:8%;"></a>
                 </div>
             
             </div>
@@ -62,7 +64,7 @@
 
     </div>
     </div>
-  
+  </div>
 
 
 <%@include file="Footer.jsp" %>
