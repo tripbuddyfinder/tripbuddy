@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="resources/styles/userhome.css">
+    <link rel="stylesheet" href="/resources/styles/userhome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,19 +31,23 @@
         
         <c:forEach var="trip" items="${trips}" >
           <div class="panel-heading" style="background-color:black; color: white;">
-            <h1 class="text-center"><strong style="font-size: 150%;">${trip.uname }</strong></h1>
+          <div style="display:inline-block;font-weight:bold;text-align:center;font-size:40px;padding-left: 20px;">Trip to ${trip.destination}</div>
+          <div style="float:right;font-size:90%;display:inline-block;text-align:center;padding-top: 10px;">Posted by ${trip.uname}<br>
+            Posted on ${trip.timestamp}</div>
+            
+            
           </div>
-          <div class="panel-body" style="font-size:200%; margin-left: 10%;">
-          <center>      <p><strong class="glyphicon glyphicon-user"></strong> 5</p>
-                
-                <p><strong class="glyphicon glyphicon-map-marker"></strong>${trip.source } To ${trip.destination}</p>
+          <div class="panel-body" style="font-size:200%; margin-left:30%;align-self:center;">
+          		<p><strong class="glyphicon glyphicon-user"></strong> 5</p>               
+                <p><strong class="glyphicon glyphicon-map-marker"></strong>${trip.source} To ${trip.destination}</p>
                 <p><strong class="glyphicon glyphicon-calendar"></strong>${trip.pdate}</p>
                 <p><strong></strong><img src="/tripbuddy/resources/images/rupee.jpeg" style="width: 28px;">${trip.cost }</p>
-                <p><strong class="glyphicon glyphicon-globe"></strong> hello</p>
-                <button class="form-control" style="width:50%; font-size: 4vmin; height: 10%; background-image: linear-gradient(to right, rgb(54, 69, 211), rgb(82, 231, 77)); color: black">
-                    INVITE FRIENDS VIA <img src="/tripbuddy/resources/images/facebook.jpeg" style="width:8%;"> <img src="/tripbuddy/resources/images/whatsapp.jpeg" style="width:8%;">
-                </button>
-            </center>
+                <p><strong class="glyphicon glyphicon-globe"></strong>${trip.info}</p>
+                <div class="form-control" style="width:50%; font-size: 4vmin; height: 10%; background-image: linear-gradient(to right, rgb(54, 69, 211), rgb(82, 231, 77)); color: black">
+                    INVITE FRIENDS<br>
+                    <img src="/resources/images/facebookblue.png" style="width:8%;"> <img src="/resources/images/whatsapp.png" style="width:8%;">
+                </div>
+            
             </div>
             
             <div class="panel-footer text-center" style="background-color:gainsboro;">
@@ -61,6 +65,6 @@
   
 
 
-</form>
+<%@include file="Footer.jsp" %>
 </body>
 </html>

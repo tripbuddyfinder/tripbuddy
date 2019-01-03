@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class TrippostController
 {
 	PostServices service = new PostServices();
-	@RequestMapping(value="trip" , method=RequestMethod.GET)
+	@RequestMapping(value="/trip" , method=RequestMethod.GET)
    public String show_postform()
    {
 	   
@@ -37,13 +37,14 @@ public class TrippostController
 	}
 	
 	
-	@RequestMapping(value="postdetails/{postid}")
+	@RequestMapping(value="/postdetail/{postid}")
 	public String postDetails(Model model, PostModel post)
 	{	
+		System.out.println(post);
 		List<PostModel> trips=service.getTripPost(post);
 		model.addAttribute("trips", trips);
 		System.out.println(trips);
-		return "PostDetails";
+		return "Postdetail";
 	}
 	
 	

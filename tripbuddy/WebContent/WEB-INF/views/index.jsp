@@ -7,99 +7,21 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="resources/vendor/fb/fb.js"></script>
+  <script src="resources/scripts/fb.js"></script>
   <script src="resources/vendor/jquery/jquery.min.js"></script>
-   <script>
-        function forwardData(user){
-        
-        console.log(user);
-        var session = new Object();
-        session.uid =user.id;
-        session.uname =user.name;
-        session.uemail =user.email
-        session.ucity = user.location.name;
-        session.upic = '';
-       
-           $.ajax({
-            url: '/tripbuddy/checkuser',
-            type: 'post',
-            contentType: "application/json; charset=utf-8",
-            traditional: true,
-            error: function(resp){
-            console.log('error part' + JSON.stringify(resp));
-            },
-            success: function (resp) {
-            
-            console.log('resp');
-            console.log(resp.code);
-            if(resp==='auth')
-               window.location.href = window.location.href+'home';
-              
-              },
-            data: JSON.stringify(session)
-        });  
-        
-        }    
-        function fblogin() {
-            FB.login(function(fbdata) {
-                      
-			var url = '/me?fields=id,name,email,location';
-			FB.api(url,'GET',{},function(userdata) {
-			console.log(userdata);
-     			 forwardData(userdata);
-            });
-
-            }, {scope: 'email,user_location'});            
-        }
-
-        function logout() {
-            FB.logout(function(response) {
-              console.log(response);
-            });
-        }
-       
-       
-        function checkLoginStatus(){
-        FB.getLoginStatus(function(response){
-        console.log(response);
-        if(response.status==='connected')
-        {	console.log('user is logged in,redirecting');
-        	redirectUser(response);
-        }	
-        else
-       	 	console.log('welcome guest');
-       
-         });
-           } 
-           
-       function redirectUser(response)    {
-       	$('.fb-button').css('display','block');
-       		console.log(window.location);
-       }    
-</script>
-        
+      
 </head>
 
-<body onload="redirectUser('response') " >
-
+<body onload="redirectUser('response')" >
 
 
   <form name="login" action="#" method="post">
 
     
 
-        <!-----  (header)  ----->
-       
-
-        <div class="header container-fluid" style="background-color:black">
-            <br>
-        <div class="trip" style="font-size: 8vmin; font-family: bookmanold style; color:orangered;">
-            <b>Trip<span style="color:white; font-size: 100%;">Buddy</span>
-            <span class="glyphicon glyphicon-search" style="font-size: 120%;"></span>  
-            </b>
-        </div>
-          
-        <br>
-        </div>
+        <!-----  (header)  ----->     
+        <%@include file="Header.jsp" %>
+        
     <!-----   (slide-show)   ----->
 
 
@@ -443,9 +365,9 @@ font-style:italic; text-transform: uppercase;">
 
         <div class="col-sm-4 center" style="font-family: bookman old style; font-size: 150%;"><br>
           <p>Contact us and we'll get back to you within 24 hours.
-            <P class="glyphicon glyphicon-map-marker"> Delhi, India</P><br>
-            <P class="glyphicon glyphicon-phone"> 91 9971906374</P><br>
-            <P class="glyphicon glyphicon-envelope"> rahulkushwaha931@gmail.com</P><br>
+            <P class="glyphicon glyphicon-map-marker"> New Delhi, India</P><br>
+            <P class="glyphicon glyphicon-phone"> 91 9987654321</P><br>
+            <P class="glyphicon glyphicon-envelope"> <a style="color:white;font-family: bookman old style; decoration:none;" href="mailto:tripbuddyfinder@hi2.in">tripbuddyfinder@hi2.in</a></P><br>
         </div>
 
         <div class="col-sm-8"><br>
@@ -501,17 +423,7 @@ information of your
     </div>
 
     <!-----   (FOOTER)   ----->
-
-    <div style="background-color:#006699">
-      <br><br>
-      <p style="font-family: Bookman Old Style;  font-size: 20px; color:white; text-align: center; 
-
-font-style: italic;">
-        <b> Copyright &copy; 2018 Trip Buddy Finder</b>
-      </p>
-      <br>
-    </div>
-
+<%@ include file="Footer.jsp" %>
 
     <!-----   (SIGNIN)   ----->
 

@@ -55,8 +55,10 @@ public class userController
 		return error;
     }
 	
-	@RequestMapping(value="/profile" ,method=RequestMethod.GET)
-	public String showProfile() {
+	@RequestMapping(value="/profile/{uid}" ,method=RequestMethod.GET)
+	public String showProfile(@PathVariable("uid")String uid,Model model) {
+		userModel user = service.fetchUser(uid);
+		model.addAttribute("user", user);
 		return "UserProfile";
 	}
 		

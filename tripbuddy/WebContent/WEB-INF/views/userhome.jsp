@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    	$(window).on('resize', function(){
+      var win = $(this); //this = window
+      console.log(win.width());
+       if (win.width() <= 750) {console.log($(#weather1).css("display"); $(#weather1).css("display","none"); }
+       else{$(#weather1).css("display","block");}
+});
+    </script>
 </head>
 
 <body>
@@ -62,13 +70,12 @@
                             <h1><strong>${trip.destination}</strong></h1>
                         </div>
                         <div class="panel-body" style="font-size:120%;">
-                            <p><strong>Planned By :</strong>${trip.uname}</p>
+                            <p><strong>Planned By :</strong><a style="color:#373238;decoration:none;" href="profile/${trip.uid}">${trip.uname}</a></p>
                             <p><strong class="glyphicon glyphicon-calendar"></strong>${trip.pdate} </p>
                             <p><strong class="glyphicon glyphicon-map-marker"> From:</strong>${trip.source} To ${trip.destination}</p>
                         </div>
                         <div class="panel-footer">
-                           <a href="postdetails/${trip.postid}"> <button class="btn btn-primary btn-lg change" style="background-color:black; color: white; font-size: 100%;">View
-                                More</a></button>
+                           <a style="background-color:black; color: white; font-size: 100%;" class="btn btn-primary btn-lg change" href="postdetail/${trip.postid}">View More </a>
                             <button class="btn btn-primary btn-lg change" style="background-color:black; color: white; font-size: 100%; margin-left: 10%;"
                                 onclick="hide()">Ignore</button>
                         </div>
@@ -97,7 +104,7 @@
  
         <!-----   (weather)   ----->
 
-        <div class="weather1 col-md-3 text-center" style="height:100%; border:1px solid black; overflow: auto; background-image: url(image/weather3.jpg); background-size: 100% 100%;">
+        <div class="weather1 col-md-3 text-center" style="height:100%; border:1px solid black; overflow: auto; background-image: url(resources/image/weather3.jpg); background-size: 100% 100%;">
 
             <br>
             <div class="zoom" style="font-family: bookmanoldstyle; color:white; font-size:280%; background-color: rgb(179, 79, 179); opacity: 0.8;">
@@ -160,7 +167,7 @@
 
     <!-----   (FOOTER)   ----->
      <%@include file="Footer.jsp" %>
-    </form>
+   
 </body>
 
 </html>
