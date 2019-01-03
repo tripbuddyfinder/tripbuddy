@@ -9,10 +9,16 @@
   <script src="resources/vendor/fb/fb.js"></script>
   <script src="resources/scripts/fb.js"></script>
   <script src="resources/vendor/jquery/jquery.min.js"></script>
+  <script>
+  function showbutton()    {
+       	$('.fb-button').css('display','block');
+       		
+       } 
+       </script>
       
 </head>
 
-<body onload="redirectUser('response')" >
+<body onload="showbutton();" >
 
 
   <form name="login" action="#" method="post">

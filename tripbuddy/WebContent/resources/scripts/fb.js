@@ -21,7 +21,7 @@
             if(resp==='auth')
                window.location.href = window.location.href+'home';
             if(resp==='blocked')
-                window.location.href = window.location.href+'block';
+                window.location.href = window.location.href+'blocked';
               
               },
             data: JSON.stringify(session)
@@ -60,7 +60,4 @@
          });
            } 
            
-       function redirectUser(response)    {
-       	$('.fb-button').css('display','block');
-       		
-       }  
+        

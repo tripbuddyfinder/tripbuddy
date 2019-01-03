@@ -56,7 +56,7 @@ public class userController
     }
 	
 
-@RequestMapping(value="/home" , method=RequestMethod.GET)
+@RequestMapping(value="/blocked" , method=RequestMethod.GET)
 public String userblocked()
 {
 	return "block";
