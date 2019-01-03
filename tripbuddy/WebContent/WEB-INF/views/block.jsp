@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <link rel="stylesheet" href="userhome.css">
+  <link rel="stylesheet" href="resources/styles/userhome.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -9,7 +9,7 @@
 
 </head>
 
-<body style="background-image: url(/reources/image/black.jpg);">
+<body style="background-image: url(resources/images/black.jpeg);">
 <%@include file="Header.jsp" %>
 
 
@@ -19,9 +19,9 @@
     <br>    YOU ACCOUNT IS BLOCKED  
     <br>NEED HELP..?<br>
     <center>
-    <button class="form-control zoom" style="width:40%; color:white; background-color: rgb(10, 2, 19); font-family:bookmanold style; font-size:5vmax; height: 10%;  border-radius: 50px;">
-        PRESS HERE
-    </button>
+    <a href="feedback"class="form-control zoom" style="width:40%; color:white; background-color: rgb(10, 2, 19); font-family:bookmanold style; font-size:5vmax; height: 10%;  border-radius: 50px;">
+        Contact us
+    </a>
     </center>
     <br><br>
     </p>
