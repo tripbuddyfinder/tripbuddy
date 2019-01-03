@@ -20,6 +20,8 @@
             console.log(resp.code);
             if(resp==='auth')
                window.location.href = window.location.href+'home';
+            if(resp==='blocked')
+                window.location.href = window.location.href+'block';
               
               },
             data: JSON.stringify(session)

@@ -24,7 +24,7 @@
 
 
 
-	<form action="login" method="post" modelAttribute="login" >
+	<form action="cpanel" method="post" modelAttribute="login" >
     <div style=" margin-left: 10%; margin-right: 10%; margin-top: 2%; border:4px solid black; border-radius: 12px; background-image: linear-gradient(to top, rgb(177, 67, 177), rgb(77, 144, 231))">
         <div class="container fluid">
             <center>

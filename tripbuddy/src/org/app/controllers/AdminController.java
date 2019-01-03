@@ -30,7 +30,7 @@ public class AdminController {
 		return "AdminLogin";
 	}
 	
-	@RequestMapping(value="/login" , method=RequestMethod.POST)
+	@RequestMapping(value="/cpanel" , method=RequestMethod.POST)
 	public String getLogin(@ModelAttribute("login") AdminModel Amodel , HttpSession session )
 	{
 		System.out.println(Amodel.getAid() + " " + Amodel.getApwd());

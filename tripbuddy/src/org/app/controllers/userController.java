@@ -55,6 +55,13 @@ public class userController
 		return error;
     }
 	
+
+@RequestMapping(value="/home" , method=RequestMethod.GET)
+public String userblocked()
+{
+	return "block";
+}
+	
 	@RequestMapping(value="/profile/{uid}" ,method=RequestMethod.GET)
 	public String showProfile(@PathVariable("uid")String uid,Model model) {
 		userModel user = service.fetchUser(uid);
@@ -78,7 +85,7 @@ public class userController
 		System.out.println("SID:"+sid);
 		if(sid!=null) {
 		service.blockUser(uid);
-		return "tester";
+		return "Dashboard";
 		}
 		else {
 		return "Showusers";
