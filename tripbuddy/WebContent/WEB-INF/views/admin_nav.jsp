@@ -1,27 +1,15 @@
-<!-----  (navbar)  ----->
-<style>
- #navbar
-            {
-                opacity:0.9; 
-                display: block;
-                z-index: 99999;
-                transition: top 0.3s;
+<!DOCTYPE html>
+<html>
 
-            }
+<head>
+    <link rel="stylesheet" href="resources/styles/userhome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
 
-           #Navbar1 ul 
-            {
-                color: white;
-                font-family: Bookman Old Style;
-                font-size: 130%;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-            }
-
-            </style>
+ <!-----  (navbar)  ----->
 
     <div id="navbar" style="position: fixed; width: 100%;">
         <nav class="navbar navbar-inverse">
@@ -41,32 +29,28 @@
                 <div class="collapse navbar-collapse navbar-right" id="Navbar1">
 
 
-                  
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#about"><span class="glyphicon glyphicon-globe"></span> Users</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#contact"> <span class="glyphicon glyphicon-phone"></span> Hotels</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#services"><span class="glyphicon glyphicon-tasks"></span> Logout</a></li>
+                        <li><a href="#review"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
                     </ul>
                    
                 </div>
             </div>
         </nav>
     </div>
-
+    
 
     <script>
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function () {
+            var prevScrollpos = window.pageYOffset;
+            window.onscroll = function() {
             var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
+              if (prevScrollpos > currentScrollPos) {
                 document.getElementById("navbar").style.top = "0";
-            } else {
+              } else {
                 document.getElementById("navbar").style.top = "-50px";
+              }
+              prevScrollpos = currentScrollPos;
             }
-            prevScrollpos = currentScrollPos;
-        }
-    </script>
+            </script>
+            </body>
+            </html>
+            

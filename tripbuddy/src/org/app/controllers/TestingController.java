@@ -9,6 +9,6 @@ public class TestingController
 	@RequestMapping(value="/testing" ,method=RequestMethod.GET)
 	public String testing()
   {
-	  return "tester";
+	  return "admin_nav";
   }
 }

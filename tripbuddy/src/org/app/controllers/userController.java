@@ -55,7 +55,10 @@ public class userController
 		return error;
     }
 	
-	
+	@RequestMapping(value="/profile" ,method=RequestMethod.GET)
+	public String showProfile() {
+		return "UserProfile";
+	}
 		
 		
 	@RequestMapping(value="/fetchusers",method=RequestMethod.GET) 

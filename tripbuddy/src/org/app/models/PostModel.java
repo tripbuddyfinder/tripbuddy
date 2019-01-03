@@ -2,21 +2,28 @@ package org.app.models;
 
 public class PostModel
 {
- private int postid, uid ,members ,cost,duration;
- private String source , destination, info,pdate,timestamp;
+ private int postid ,members ,cost,duration;
+ private String source , destination, info,pdate,timestamp,uid,uname;
  
  
 
+public String getUname() {
+	return uname;
+}
+public String setUname(String uname) {
+	return this.uname = uname;
+}
 public int getPostid() {
 	return postid;
 }
 public void setPostid(int postid) {
 	this.postid = postid;
 }
-public int getUid() {
+
+public String getUid() {
 	return uid;
 }
-public void setUid(int uid) {
+public void setUid(String uid) {
 	this.uid = uid;
 }
 public int getMembers() {
@@ -69,9 +76,9 @@ public void setTimestamp(String timestamp) {
 }
 @Override
 public String toString() {
-	return "PostModel [postid=" + postid + ", uid=" + uid + ", members=" + members + ", cost=" + cost + ", duration="
-			+ duration + ", source=" + source + ", destination=" + destination + ", info=" + info + ", pdate=" + pdate
-			+ ", timestamp=" + timestamp + "]";
+	return "PostModel [postid=" + postid + ", members=" + members + ", cost=" + cost + ", duration=" + duration
+			+ ", source=" + source + ", destination=" + destination + ", info=" + info + ", pdate=" + pdate
+			+ ", timestamp=" + timestamp + ", uid=" + uid + ", uname=" + uname + "]";
 }
 
  

@@ -25,9 +25,10 @@ public class hotelController
 @RequestMapping(value="hotels/addhotels" , method=RequestMethod.GET)	
   public String addhotel(@ModelAttribute("hotels") HotelModel hotel , Model model)
   {
+	System.out.println("Hotel Form Data:"+hotel);
 	
 	System.out.println("Calling DAO");
 	service.addhotel(hotel);
-	return "done";
+	return "tester";
   }
 }

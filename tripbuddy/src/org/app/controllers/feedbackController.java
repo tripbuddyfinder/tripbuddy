@@ -21,7 +21,7 @@ public class feedbackController
 {
 	FeedbackDaoImpl dao=new FeedbackDaoImpl();
 	//iio
-	@RequestMapping(value="feedback" , method=RequestMethod.GET)
+	@RequestMapping(value="/feedback" , method=RequestMethod.GET)
 	public String givefeedback()
 	{
 		return "feedback";

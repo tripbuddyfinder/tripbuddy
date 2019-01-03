@@ -1,11 +1,13 @@
 <%@page language="java" contentType="text/html" pageEncoding="UTF-8" %>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@include file="user_nav.jsp" %>
 <%@include file="Header.jsp" %>
+
 <!DOCTYPE html>
 <html>
 
 <head>
-    <link rel="stylesheet" href="resources/userhome.css">
+    <link rel="stylesheet" href="resources/styles/userhome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -14,140 +16,67 @@
 
 <body>
 
-	id : ${session.fbsession.uid}
- help :	${fbsession.uname}
- <img src="${fbsession.upic}" />
-    <form name="userhomepage" action="#" method="post">
-
-        <!-----  (navbar)  ----->
-
-    <!-- <div id="navbar" style="position: fixed; width: 100%;">
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar1">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#home" style="font-size: 150%; color:white; font-family:Bookman Old Style;">
-                        <span class="glyphicon glyphicon-home"><span class="active"> HOME</span></span>
-                    </a>
-                </div>
-
-                <div class="collapse navbar-collapse navbar-right" id="Navbar1">
 
 
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#review"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#about"><span class="glyphicon glyphicon-globe"></span> Plan</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav">
-                        <li><a href="#contact"> <span class="glyphicon glyphicon-phone"></span> Chat</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#services"><span class="glyphicon glyphicon-tasks"></span> Help</a></li>
-                    </ul>
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#review"><span class="glyphicon glyphicon-list-alt"></span> Profile</a></li>
-                    </ul>
+
+   
+    <!-----   (Search)   ----->
+
+
+    <div class="searching" style="background-image: url(resources/images/logo.jpg); background-size: 100% 100%;">
+        <br><br><br><br><br>
+        <center>
+            <div class="searching1">
+                <div class="input-group" style="width:50%; margin-left: 20%">
+                    <input type="text" class="form-control" placeholder="Enter what you need to find..." style="text-align:center">
+
+                    <div class="input-group-btn" style="width:1%;">
+                        <button type="buttofasdasdn" class="btn btn-danger">Search</button>
+                    </div>
+
                 </div>
             </div>
-        </nav>
+        </center>
+        <br><br><br><br>
     </div>
-
-
-    <script>
-        var prevScrollpos = window.pageYOffset;
-        window.onscroll = function () {
-            var currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("navbar").style.top = "0";
-            } else {
-                document.getElementById("navbar").style.top = "-50px";
-            }
-            prevScrollpos = currentScrollPos;
-        }
-    </script>
-
-    ---  (header)  ---
-    <br><br><br>
-    <div class="header container-fluid" style="background-color:black; margin-left: auto; margin-right: auto;">
-        <br>
-        <div class="trip" style="font-size: 8vmin; font-family: bookmanold style; color:orangered;">
-            <b>Trip<span style="color:white; font-size: 100%;">Buddy</span>
-                <span class="glyphicon glyphicon-search" style="font-size: 120%;"></span>
-            </b>
-            <span style="color:white; font-size: 2vmax; float:right; overflow: hidden;"><br> India Biggest Trip
-                Buddy Finder Site </span>
-
-
-        </div>
-        <br>
-    </div>
-
- -->
-
-    <!-----   (Profile)   ----->
-
-
-    <div class="el" style="width:10%;"></div>
-    <script>
-        var path = 'resources/images/profile/',
-            imgs = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
-            i = Math.floor(Math.random() * imgs.length);
-        $('.el').append("<img src='" + path + imgs[i] + "'height=50%; width=1000%;'>").hide().fadeIn(2000);
-
-    </Script>
-
-    <div class="userprofile">
-
-        <br> <img align="left" class="zoom thumbnail" src="resources/images/profile/1.jpg" style="width:35%; height: 40%;  position: absolute; top: 70%; left: 5%;">
-        <div class="name" style="margin-left:60%; font-family: bookmanold style; font-size: 10vmin; color: blue;">Rahul<br></div>
-        <div class="city glyphicon glyphicon-map-marker " style="margin-left:61%;  font-size: 4vmin; color: blue;">
-            Delhi</div>
-
-    </div>
-
-    <hr style="border-width:3px; margin-top: 10%; border-style: inset; width: 98%;">
 
 
 
     <!-----   (post trip)   ----->
+    
 
-    <div class="row" style="width:100%; height: 150%; margin-left: 0px;">
+    <div class="row" style="width:100%; margin-left: 0px;">
 
-        <div class="postcontainer col-md-12" style="background-color:#115272; margin-top:2%; height:100%; border:2px solid black; overflow: auto;  background-images: url(images/profile/1.jpg); background-size: 100% 100%;">
+        <div class="postcontainer  col-md-9" style="background-color:#115272; height:100%; border:2px solid black; overflow: auto;  background-image: url(image/weather2blur.png); background-size: 100% 100%;">
             <br>
-
+			
             <div id="postchild">
-
-                <div class="col-sm-3 zoom" style="width:50%; font-family: bookmanold style;">
-                    <div class="thumbnail">
-                        <img src="resources/images/ladakh2.jpg" style="width:50%; height:30%;">
-                        <br>
-                        <p><strong class="place" style="font-size:200%;"> You visited : <strong style="color:blue;">Goa</strong></strong></p>
-                        <p><strong class="date" style="font-size:200%;"> On : <strong style="color:blue;">20-Dec-2018</strong></strong></p>
-                        <p><strong class="friends" style="font-size:200%;"> With : <strong style="color:blue;">Rajan, Biplab, palak</strong></strong></p>
-                        <p><strong class="about" style="font-size:200%;"> About : <strong style="color:blue;">Story</strong></strong></p>
-                    </div>
-                </div>
-
-                <div class="col-sm-3 zoom" style="width:50%; font-family: bookmanold style;">
-                        <div class="thumbnail">
-                            <img src="resources/images/goa.jpg" style="width:100%; height:30%;">
-                            <br>
-                            <p><strong class="place" style="font-size:200%;"> You visited : <strong style="color:blue;">Goa</strong></strong></p>
-                            <p><strong class="date" style="font-size:200%;"> On : <strong style="color:blue;">20-Dec-2018</strong></strong></p>
-                            <p><strong class="friends" style="font-size:200%;"> With : <strong style="color:blue;">Rajan, Biplab, palak</strong></strong></p>
-                            <p><strong class="about" style="font-size:200%;"> About : <strong style="color:blue;">Story</strong></strong></p>
+            	<c:forEach var="trip" items="${trips}" >
+                <div class="col-sm-4 zoom" style="font-family: bookmanold style;">
+                    <div class="panel  text-center">
+                        <div class="panel-heading" style="background-color:black; color: white;">
+                        
+<!-----   Trip Data From Controller   ----->
+							 
+                        
+                            <h1><strong>${trip.destination}</strong></h1>
+                        </div>
+                        <div class="panel-body" style="font-size:120%;">
+                            <p><strong>Planned By :</strong>${trip.uname}</p>
+                            <p><strong class="glyphicon glyphicon-calendar"></strong>${trip.pdate} </p>
+                            <p><strong class="glyphicon glyphicon-map-marker"> From:</strong>${trip.source} To ${trip.destination}</p>
+                        </div>
+                        <div class="panel-footer">
+                           <a href="postdetails/${trip.postid}"> <button class="btn btn-primary btn-lg change" style="background-color:black; color: white; font-size: 100%;">View
+                                More</a></button>
+                            <button class="btn btn-primary btn-lg change" style="background-color:black; color: white; font-size: 100%; margin-left: 10%;"
+                                onclick="hide()">Ignore</button>
                         </div>
                     </div>
-
                 </div>
+                 </c:forEach>
+            </div>
+           
 
             <script>
                 function hide() {
@@ -159,12 +88,79 @@
             </script>
 
         </div>
+        
+
+
+
+
+
+ 
+        <!-----   (weather)   ----->
+
+        <div class="weather1 col-md-3 text-center" style="height:100%; border:1px solid black; overflow: auto; background-image: url(image/weather3.jpg); background-size: 100% 100%;">
+
+            <br>
+            <div class="zoom" style="font-family: bookmanoldstyle; color:white; font-size:280%; background-color: rgb(179, 79, 179); opacity: 0.8;">
+            <b>Weather Forcast</b>
+            </div>
+            <br>
+
+            <!-----   (New Delhi)   ----->
+            <a target="_blank" href="https://www.booked.net/weather/new-delhi-18038">
+                <img class="zoom weather" src="https://w.bookcdn.com/weather/picture/32_18038_1_1_9b59b6_250_8e44ad_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=29699"
+                    alt="booked.net" style="width:50%; margin-top: 5%;" /></a>
+
+            <br><br>
+
+            <!-----   (Shimla)   ----->
+            <a target="_blank" href="https://www.booked.net/weather/shimla-18040">
+                <img class="zoom weather" src="https://w.bookcdn.com/weather/picture/32_18040_1_1_9b59b6_250_8e44ad_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=29699"
+                    alt="booked.net" style="width:50%;"/></a>
+
+            <br><br>
+
+            <!-----   (Nainital)   ----->
+            <a target="_blank" href="https://www.booked.net/weather/nainital-10014">
+                <img class="zoom weather" src="https://w.bookcdn.com/weather/picture/32_10014_1_1_9b59b6_250_8e44ad_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=29699"
+                    alt="booked.net" style="width:50%;"/></a>
+
+            <br><br>
+
+            <!-----   (Manali)   ----->
+            <a target="_blank" href="https://www.booked.net/weather/manali-32467">
+                <img class="zoom weather" src="https://w.bookcdn.com/weather/picture/32_32467_1_1_9b59b6_250_8e44ad_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=29699"  
+                    alt="booked.net" style="width:50%;"/></a>
+
+            <br><br>
+
+            <!-----   (Goa)   ----->
+            <a target="_blank" href="https://www.booked.net/weather/goa-19513">
+                <img class="zoom weather" src="https://w.bookcdn.com/weather/picture/32_19513_1_1_9b59b6_250_8e44ad_ffffff_ffffff_1_2071c9_ffffff_0_6.png?scode=124&domid=w209&anc_id=29699"
+                    alt="booked.net" style="width:50%; margin-bottom: 5%;"/></a>
+
+        </div>
     </div>
 
+    <br>
 
-    <%@include file="Footer.jsp" %>
-   
 
+
+
+
+
+
+
+    <!-----   (MAKE A PLAN)   ----->
+
+    <div class="button"><a href="trip" class="btn btn-default btn-lg zoom" style="position: fixed; opacity:0.8; z-index: 99999; background-color:black; right: 3%; bottom: 3%; ">
+        <span class="center glyphicon" style="color:white; font-size: 3vmin;"><b class="glyphicon glyphicon-map-marker ">
+                MAKE A PLAN</b></span></a>
+</div>
+
+
+    <!-----   (FOOTER)   ----->
+     <%@include file="Footer.jsp" %>
+    </form>
 </body>
 
 </html>

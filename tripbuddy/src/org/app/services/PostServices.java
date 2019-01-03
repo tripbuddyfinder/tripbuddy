@@ -1,5 +1,7 @@
 package org.app.services;
 
+import java.util.List;
+
 import org.app.daos.PostDaoImpl;
 import org.app.models.PostModel;
 
@@ -13,4 +15,14 @@ public class PostServices
 	return dao.insert(post);
 	  
   }
+  
+  public List<PostModel> getAllTripPosts()
+  {
+	return dao.getAllPosts();
+  }
+  
+  public List<PostModel> getTripPost(PostModel post)
+  {
+	return dao.getPost(post);
+  }  
 }
