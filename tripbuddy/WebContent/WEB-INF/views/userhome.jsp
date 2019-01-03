@@ -28,7 +28,27 @@
 
 
    
-   
+    <!-----   (Search)   ----->
+
+
+    <div class="searching" style="background-image: url(resources/images/logo.jpg); background-size: 100% 100%;">
+        <br><br><br><br><br>
+        <center>
+            <div class="searching1">
+                <div class="input-group" style="width:50%; margin-left: 20%">
+                    <input type="text" class="form-control" placeholder="Enter what you need to find..." style="text-align:center">
+
+                    <div class="input-group-btn" style="width:1%;">
+                        <button type="buttofasdasdn" class="btn btn-danger">Search</button>
+                    </div>
+
+                </div>
+            </div>
+        </center>
+        <br><br><br><br>
+    </div>
+
+
 
     <!-----   (post trip)   ----->
     
