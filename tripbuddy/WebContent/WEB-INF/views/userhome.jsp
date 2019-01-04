@@ -7,7 +7,7 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="resources/styles/userhome.css">
+    <link rel="stylesheet" href="/tripbuddy/resources/styles/userhome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -31,7 +31,7 @@
     <!-----   (Search)   ----->
 
 
-    <div class="searching" style="background-image: url(resources/images/logo.jpg); background-size: 100% 100%;">
+    <div class="searching" style="background-image: url(/tripbuddy/resources/images/logo.jpg); background-size: 100% 100%;">
         <br><br><br><br><br>
         <center>
             <div class="searching1">
@@ -70,12 +70,12 @@
                             <h1><strong>${trip.destination}</strong></h1>
                         </div>
                         <div class="panel-body" style="font-size:120%;">
-                            <p><strong>Planned By :</strong><a style="color:#373238;decoration:none;" href="profile/${trip.uid}">${trip.uname}</a></p>
+                            <p><strong>Planned By :</strong><a style="color:#373238;decoration:none;" href="/tripbuddy/profile/${trip.uid}">${trip.uname}</a></p>
                             <p><strong class="glyphicon glyphicon-calendar"></strong>${trip.pdate} </p>
                             <p><strong class="glyphicon glyphicon-map-marker"> From:</strong>${trip.source} To ${trip.destination}</p>
                         </div>
                         <div class="panel-footer">
-                           <a style="background-color:black; color: white; font-size: 100%;" class="btn btn-primary btn-lg change" href="postdetail/${trip.postid}">View More </a>
+                           <a style="background-color:black; color: white; font-size: 100%;" class="btn btn-primary btn-lg change" href="/tripbuddy/postdetail/${trip.postid}">View More </a>
                             <button class="btn btn-primary btn-lg change" style="background-color:black; color: white; font-size: 100%; margin-left: 10%;"
                                 onclick="hide()">Ignore</button>
                         </div>

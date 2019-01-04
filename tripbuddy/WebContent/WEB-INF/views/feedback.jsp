@@ -30,7 +30,7 @@ function myFunction(event) {
     <!-----   (fEEDBACK)   ----->
 
 
-<form action="feedback/saveFeedback" modelAttribute="FB"  >
+<form action="/tripbuddy/feedback/saveFeedback" modelAttribute="FB"  >
 
 
     <div style="background-color:#006699">
