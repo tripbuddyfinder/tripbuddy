@@ -28,16 +28,9 @@ public class TrippostController
    }
 	
 	@RequestMapping(value="/posttrip" , method=RequestMethod.GET)
-	   public String postTrip(@ModelAttribute("tripdata") PostModel post , Model model) {
-		
-		System.out.println("Data Getting From Foam");
-		System.out.println(post.getSource() +  post.getDestination() + post.getPdate() +
-			post.getDuration() + post.getMembers() + post.getCost() + post.getUid() + post.getInfo() + post.getTimestamp()); 
-	
-		//service.addPost(post);
-	
-	
-		return "tester";
+	   public String postTrip(@ModelAttribute("tripdata") PostModel post , Model model) {		
+		int i = service.addPost(post);	
+		return "redirect:postdetail/"+i;
 	}
 	
 	

@@ -16,16 +16,16 @@ public class PostDaoImpl implements PostDao{
 	public int insert(PostModel post) {
 		
 		String query="Insert into trip_posts(source, destination, p_date,duration,members,each_cost,u_id,info,timestamp) values(?,?,?,?,?,?,?,?,?)";
-		
+		String q2 ="select post_id from trip_posts where u_id=?";
 		JdbcTemplate conn =connect.getTemplate();
 		
 		
-	int i=	conn.update(query, new Object[] { post.getSource() , post.getDestination() , post.getPdate() ,
+	conn.update(query, new Object[] { post.getSource() , post.getDestination() , post.getPdate() ,
 			post.getDuration() , post.getMembers() , post.getCost(), post.getUid(),post.getInfo() , post.getTimestamp()
 	
 	
 	} );
-		
+		int i = conn.queryForObject(q2, Integer.class);		
 		return i;
 	}
 

@@ -113,7 +113,7 @@
 </textarea>
                 <br>
 
-                User id <br><input type="number" name="uid" class="form-control" style="width:40%;"><br><br>
+               <input type="hidden" name="uid" value="${fbsession.uid}">
 
                 <hr style="border:1px solid rgb(216, 204, 204); ">
                 <input type="submit" value="Post" onclick="myFunction(event)" class="form-control" style="width:40%; height: 1%;  border-radius: 50px; font-size:150%; color: white; background-color: rgb(4, 4, 24)">
