@@ -7,6 +7,7 @@ import javax.servlet.http.HttpSession;
 import org.app.daos.FeedbackDaoImpl;
 import org.app.models.ChatMessage;
 import org.app.models.Feedback;
+import org.app.models.userModel;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -28,10 +29,15 @@ public class feedbackController
 	}
 		
 	@RequestMapping(value="feedback/saveFeedback" , method=RequestMethod.GET)
-	public @ResponseBody String saveData(@ModelAttribute("FB") Feedback fb)
+	public @ResponseBody String saveData(@ModelAttribute("FB") Feedback fb,HttpSession session)
 	{
-		System.out.println(fb.getUid() + " " + fb.getSub() + " " + fb.getDesc() + " " + fb.getTimestamp() + " " + fb.getStatus());
-		 dao.insertFeedback(fb);
+		userModel user= (userModel)session.getAttribute("fbsession");
+		if(user==null) {
+			System.out.println("No Session Attached");
+		}
+		else
+		System.out.println(fb.getUid() + " " + fb.getSub() + " " + fb.getDesc() + " " + fb.getTimestamp());
+		//dao.insertFeedback(fb);
 		  return "feedback";
 	 }
 	

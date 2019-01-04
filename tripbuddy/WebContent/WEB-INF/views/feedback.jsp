@@ -1,12 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
    <%@include file="Header.jsp" %>
+   
       
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="homepage.css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -47,14 +48,15 @@ function myFunction(event) {
           <div class="col-sm-8"><br>
   
             <div class="row">
+              <div class="col-sm-6 "> 
+               
               <div class="col-sm-6">
-                <input type="text" placeholder="ID" class="form-control">
-                <br></div>
-              <div class="col-sm-6">
-                <input type="text" placeholder="SUBJECT" class="form-control">
+              <input type="hidden" name="timestamp" value="ts" id="ts">
+              <input type="hidden" name="uid" value="">
+                <input type="text" name="sub" placeholder="SUBJECT" class="form-control">
               </div><br>
             </div>
-            <textarea placeholder="Description" rows="5" class="form-control"></textarea>
+            <textarea placeholder="Description"  name="desc" rows="5" class="form-control"></textarea>
           </div>
           <br>
           <div class="col-sm-2 pull-right zoom">
@@ -72,3 +74,4 @@ function myFunction(event) {
      <%@include file="Footer.jsp" %>
 </body>
 </html>
+-+
