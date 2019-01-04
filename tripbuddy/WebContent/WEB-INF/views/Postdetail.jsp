@@ -3,7 +3,7 @@
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
     <%@include file="user_nav.jsp" %>
     <%@include file="Header.jsp" %>
-
+  
 <html>
 
 <head>
@@ -13,9 +13,46 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    function formatTime(time){
+      var time = new Date(time);
+      var ts=null;
+      var now = new Date();
+      var t12 = tConv24(time.getHours()+":"+time.getMinutes());
+      if(time.getYear()===now.getYear()){
+      if(now.getDay()===time.getDay() && now.getMonth()===time.getMonth()){
+          ts= t12+", Today";
+      }  
+      else if((now.getDay()-1)===time.getDay() && now.getMonth()===time.getMonth()){
+    	  ts= t12+", Yesterday";
+      }
+      else {
+         ts= t12+", "+time.getDate()+"-"+(time.getMonth()+1);
+      }
+      }
+      else{
+    	  ts= t12+", "+time.getDate()+"-"+(time.getMonth()+1)+"-"+(time.getFullYear().toString()).substr(2,3);
+      }
+      document.getElementById('ts').innerHTML=ts;
+      }
+  
+  
+      function tConv24(time24) {
+    	  var ts = time24;    	  
+    	  var H = +ts.substr(0, 2);
+    	  var m = ts.substr(3, 4);
+    	  var h = (H % 12) || 12;
+    	  h = (h < 10)?("0"+h):h;  //  leading 0 at the left for 1 digit hours
+    	  m = (m < 10)?("0"+m):m;
+    	  var ampm = H < 12 ? " AM" : " PM";
+    	  ts = h +':'+ m + ampm;
+    	  return ts;
+    	};
+    
+    </script>
 </head>
 
-<body>
+<body onload="formatTime('${trips[0].timestamp}')">
 
     
 
@@ -31,10 +68,10 @@
         <!----- Fetching Data From Model -->
         
         <c:forEach var="trip" items="${trips}" >
-          <div class="panel-heading" style="background-color:black; color: white;">
+          <div class="panel-heading" style="background-color:black; color: white;" >
           <div style="display:inline-block;font-weight:bold;text-align:center;font-size:40px;padding-left: 20px;">Trip to ${trip.destination}</div>
           <div style="float:right;font-size:90%;display:inline-block;text-align:center;padding-top: 10px;">Posted by ${trip.uname}<br>
-            Posted on ${trip.timestamp}</div>
+            Posted on <div id="ts" >${trip.timestamp}</div></div>
             
             
           </div>
