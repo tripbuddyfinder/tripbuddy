@@ -36,9 +36,9 @@ public class AdminController {
 		System.out.println(Amodel.getAid() + " " + Amodel.getApwd());
 		
 		List <AdminModel> data=service.checkLogin(Amodel); 
-		session.setAttribute("admin", Amodel.getAid());
-		System.out.println(data);
-		return "Dashboard";
+		
+		//System.out.println(data);
+		return "ShowFeedbacks";
 	}
 	
 	@RequestMapping(value="/logout" , method=RequestMethod.GET)

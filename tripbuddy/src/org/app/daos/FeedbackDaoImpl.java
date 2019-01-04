@@ -40,7 +40,7 @@ public class FeedbackDaoImpl  implements FeedbackDao
 				String ts=(rs.getString("f_timestamp"));
 				fb.setUid(rs.getString("u_id"));
 				fb.setDesc(rs.getString("discr"));
-				fb.setStatus(rs.getString("f_status"));
+				
 				System.out.println("Only Timestamps=:" +ts);
 				return fb;
 			}});

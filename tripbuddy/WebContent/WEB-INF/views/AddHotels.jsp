@@ -14,9 +14,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <title>Add Hotels </title>
+    	
+<style>
+a.active
+{
+background-color:black;
+color:white;
+}
+</style>
 </head>
 
 <body>
+
+
 
        <!-----   (ADD HOTEL)   ----->
 
@@ -27,6 +37,7 @@
                 <p style="font-size:250%; color: rgb(153, 145, 173);">ADD HOTELS</p>
                 <hr style="border:1px solid rgb(216, 204, 204); ">
                 <br>
+                
                 Hotel Name<br><input type="text" name="hname" class="form-control" style="width:20%"><br>
 
                 State<br><input type="text" name="state" class="form-control" style="width:20%"><br>

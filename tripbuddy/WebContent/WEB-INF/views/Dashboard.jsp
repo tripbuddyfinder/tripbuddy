@@ -28,10 +28,10 @@
 <br>
     <div class="col-sm-2" style=" background-color: rgb(255, 255, 255);">
     <center>
-        <a href="fetchusers" style="font-family:bookmanold style; font-size:150%;">VIEW USER</a><br>
-        <a href="fetchfeedbacks" style="font-family:bookmanold style; font-size:150%;">VIEW FEEDBACK</a><br>
-        <a href="addhotels" style="font-family:bookmanold style; font-size:150%;">ADD HOTEL</a><br>
-        <a href="blockusers" style="font-family:bookmanold style; font-size:150%;">BLOCK USERS</a><br>
+        <a href="/tripbuddy/fetchusers" style="font-family:bookmanold style; font-size:150%;">VIEW USER</a><br>
+        <a href="/tripbuddy/fetchfeedbacks" style="font-family:bookmanold style; font-size:150%;">VIEW FEEDBACK</a><br>
+        <a href="/tripbuddy/addhotels" style="font-family:bookmanold style; font-size:150%;">ADD HOTEL</a><br>
+        <a href="/tripbuddy/blockusers" style="font-family:bookmanold style; font-size:150%;">BLOCK USERS</a><br>
     </center>
     </div>
 

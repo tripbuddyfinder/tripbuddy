@@ -8,13 +8,20 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="resources/styles/dashboard.css">
-    <link rel="stylesheet" href="resources/styles/userhome.css">
+    <link rel="stylesheet" href="/tripbuddy/resources/styles/dashboard.css">
+    <link rel="stylesheet" href="/tripbuddy/resources/styles/userhome.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	
+<style>
+a.active
+{
+background-color:black;
+color:white;
+}
+</style>
 
 </head>
 
@@ -27,10 +34,10 @@
 <br>
     <div class="col-sm-2" style=" background-color: rgb(255, 255, 255);">
     <center>
-        <a href="fetchusers" style="font-family:bookmanold style; font-size:150%;">VIEW USER</a><br>
-        <a href="fetchfeedbacks" style="font-family:bookmanold style; font-size:150%;">VIEW FEEDBACK</a><br>
-        <a href="addhotels" style="font-family:bookmanold style; font-size:150%;">ADD HOTEL</a><br>
-         <a href="blockusers" style="font-family:bookmanold style; font-size:150%;">BLOCK USERS</a><br>
+        <a class="active" href="/tripbuddy/fetchusers" style="font-family:bookmanold style; font-size:150%;">VIEW USER</a><br>
+        <a href="/tripbuddy/fetchfeedbacks" style="font-family:bookmanold style; font-size:150%;">VIEW FEEDBACK</a><br>
+        <a href="/tripbuddy/addhotels" style="font-family:bookmanold style; font-size:150%;">ADD HOTEL</a><br>
+         <a href="/tripbuddy/blockusers" style="font-family:bookmanold style; font-size:150%;">BLOCK USERS</a><br>
     </center>
     </div>
 
