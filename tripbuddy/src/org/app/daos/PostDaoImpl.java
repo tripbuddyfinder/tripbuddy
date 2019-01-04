@@ -25,7 +25,7 @@ public class PostDaoImpl implements PostDao{
 	
 	
 	} );
-		int i = conn.queryForObject(q2, Integer.class);		
+		int i = conn.queryForObject(q2,new Object[]{post.getUid()}, Integer.class);		
 		return i;
 	}
 

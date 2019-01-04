@@ -14,7 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta charset="ISO-8859-1">
   <title>Feedback</title>
-</style>
+
 <script>
 function myFunction(event) {
   var n = new Date();
@@ -39,20 +39,23 @@ function myFunction(event) {
             <b>Give Your Valueable Feedback</b></p>
   
           <div class="col-sm-4 center" style="font-family: bookman old style; font-size: 150%;"><br>
-            <p>Contact us and we'll get back to you within 24 hours.
-              <P class="glyphicon glyphicon-map-marker"> Delhi, India</P><br>
-              <P class="glyphicon glyphicon-phone"> 91 9971906374</P><br>
-              <P class="glyphicon glyphicon-envelope"> rahulkushwaha931@gmail.com</P><br>
-          </div>
+          <p>Contact us and we'll get back to you within 24 hours.
+            <P class="glyphicon glyphicon-map-marker"> New Delhi, India</P><br>
+            <P class="glyphicon glyphicon-phone"> 91 9987654321</P><br>
+            <P class="glyphicon glyphicon-envelope"> <a style="color:white;font-family: bookman old style; decoration:none;" href="mailto:tripbuddyfinder@hi2.in">tripbuddyfinder@hi2.in</a></P><br>
+        </div>
   
           <div class="col-sm-8"><br>
   
             <div class="row">
-              <div class="col-sm-6 "> 
+              
+              <div class="col-sm-6">
+              <input type="text" placeholder="Name" class="form-control">
+              <br></div>
                
               <div class="col-sm-6">
               <input type="hidden" name="timestamp" value="ts" id="ts">
-              <input type="hidden" name="uid" value="">
+              <input type="hidden" name="uid" value="${fbsession.uid}">
                 <input type="text" name="sub" placeholder="SUBJECT" class="form-control">
               </div><br>
             </div>

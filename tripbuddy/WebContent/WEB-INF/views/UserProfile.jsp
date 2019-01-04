@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-   <%@include file="Header.jsp" %>
+    pageEncoding="ISO-8859-1"%>   
 	<%@include file="user_nav.jsp" %>
+	<%@include file="Header.jsp" %>
 <!DOCTYPE html>
 <html>
 
@@ -66,7 +66,7 @@
                     </center>
                 </div>
             </div>
-        </div>
+<br>        </div>
 
     </div>
    <%@include file="Footer.jsp" %>

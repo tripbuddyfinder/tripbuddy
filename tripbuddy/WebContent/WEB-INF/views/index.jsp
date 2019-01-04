@@ -53,7 +53,7 @@ of the most
             <img src="resources/images/nainital1.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Nainital</h3>
-              <p id="subheading">Nainital is KumaonÃ¢ÂÂs biggest town and favorite hill retrea</p>
+              <p id="subheading">Nainital is Kumaon'�s biggest town and favorite hill retrea</p>
             </div>
 
           </div>
@@ -64,7 +64,7 @@ of the most
             <img src="resources/images/ladakh2.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Leh Ladakh</h3>
-              <p id="subheading">LadakhÃ¢ÂÂs remarkably well-balanced traditional society has much to 
+              <p id="subheading">Ladakh'�s remarkably well-balanced traditional society has much to 
 
 teach the West in
                 terms of ecological awareness</p>
@@ -162,9 +162,7 @@ main town</p>
             <li>Millions of verified user reviews</li><br>
             <li>Save upto 25%</li>
             <br><br>
-            <button class="form-control zoom" style="height:20%; max-width: 70%; font-size: 
-
-2vmin"><b>Search Now</b></button>
+            
           </div>
         </div>
       </div>

@@ -29,16 +29,15 @@ public class feedbackController
 	}
 		
 	@RequestMapping(value="feedback/saveFeedback" , method=RequestMethod.GET)
-	public @ResponseBody String saveData(@ModelAttribute("FB") Feedback fb,HttpSession session)
+	public String saveData(@ModelAttribute("FB") Feedback fb,HttpSession session)
 	{
 		userModel user= (userModel)session.getAttribute("fbsession");
 		if(user==null) {
-			System.out.println("No Session Attached");
+			fb.setUid("");
 		}
-		else
 		System.out.println(fb.getUid() + " " + fb.getSub() + " " + fb.getDesc() + " " + fb.getTimestamp());
-		//dao.insertFeedback(fb);
-		  return "feedback";
+		dao.insertFeedback(fb);
+		  return "index";
 	 }
 	
 	

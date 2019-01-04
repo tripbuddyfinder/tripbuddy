@@ -55,7 +55,7 @@
 
     <div class="row" style="width:100%; margin-left: 0px;">
 
-        <div class="postcontainer  col-md-9" style="background-color:#115272; height:100%; border:2px solid black; overflow: auto;  background-image: url(image/weather2blur.png); background-size: 100% 100%;">
+        <div class="postcontainer  col-md-9" style="background-color:#115272; height:100%; border:2px solid black; overflow: auto;  background-image: url(/tripbuddy/resources/images/black.jpeg); background-size: 100% 100%;">
             <br>
 			
             <div id="postchild">
@@ -95,7 +95,6 @@
             </script>
 
         </div>
-        
 
 
 
@@ -104,7 +103,7 @@
  
         <!-----   (weather)   ----->
 
-        <div class="weather1 col-md-3 text-center" style="height:100%; border:1px solid black; overflow: auto; background-image: url(resources/image/weather3.jpg); background-size: 100% 100%;">
+        <div class="weather1 col-md-3 text-center" style="height:100%; border:1px solid black; overflow: auto; background-image: url(/tripbuddy/resources/images/black.jpg); background-size: 100% 100%;">
 
             <br>
             <div class="zoom" style="font-family: bookmanoldstyle; color:white; font-size:280%; background-color: rgb(179, 79, 179); opacity: 0.8;">

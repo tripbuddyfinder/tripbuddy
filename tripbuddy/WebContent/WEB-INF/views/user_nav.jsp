@@ -32,7 +32,7 @@
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" href="#home" style="font-size: 150%; color:white; font-family:Bookman Old Style;">
-                        <span class="glyphicon glyphicon-home"><span class="active"> HOME</span></span>
+                        <span class="glyphicon glyphicon-home"></span>
                     </a>
                 </div>
 
@@ -45,16 +45,16 @@
                     </ul>
                                        
                    <c:if test="${!empty gid}"> <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="/tripbuddy/chatroom"><span class="glyphicon glyphicon-tasks"></span>Chat</a></li>
+                        <li><a href="/tripbuddy/chatroom"><span class="glyphicon glyphicon-tasks"></span> Chat</a></li>
                     </ul> 
                     </c:if> 
                                         
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="/tripbuddy/profile/${fbsession.uid}"><span class="glyphicon glyphicon-list-alt"></span>Profile</a></li>
+                        <li><a href="/tripbuddy/profile/${fbsession.uid}"><span class="glyphicon glyphicon-list-alt"></span> Profile</a></li>
                     </ul>
                    
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                        <li><a href="/tripbuddy/home"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                     </ul> 
                     
                     </c:if>
@@ -68,7 +68,7 @@
                         <li><a href="/tripbuddy/feedback"><span class="glyphicon glyphicon-tasks"></span>Feedback</a></li>
                     </ul>  
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                        <li><a href="/tripbuddy"><span class="glyphicon glyphicon-home"></span>Home</a></li>
                     </ul> 
                     
                     </c:if>

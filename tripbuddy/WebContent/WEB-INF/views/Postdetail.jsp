@@ -38,15 +38,15 @@
             
             
           </div>
-          <div class="panel-body" style="font-size:200%; margin-left:30%;align-self:center;">
-          		<p><strong class="glyphicon glyphicon-user"></strong> 5</p>               
-                <p><strong class="glyphicon glyphicon-map-marker"></strong>${trip.source} To ${trip.destination}</p>
-                <p><strong class="glyphicon glyphicon-calendar"></strong>${trip.pdate}</p>
-                <p><strong></strong><img src="/tripbuddy/resources/images/rupee.jpeg" style="width: 28px;">${trip.cost}</p>
-                <p><strong class="glyphicon glyphicon-globe"></strong>${trip.info}</p>
-                <div class="form-control" style="text-align:center;width:50%; font-size: 4vmin; height: 10%; background-image: linear-gradient(to right, rgb(54, 69, 211), rgb(82, 231, 77)); color: black">
+          <div class="panel-body" style="font-size:200%; margin-left:35%;align-self:center;">
+          		<p><strong class="glyphicon glyphicon-user">${trip.members}</strong></p>               
+                <p><strong class="glyphicon glyphicon-map-marker"></strong> ${trip.source} To ${trip.destination}</p>
+                <p><strong class="glyphicon glyphicon-calendar"></strong> ${trip.pdate}</p>
+                <p><strong></strong><img alt="Cost per head" src="/tripbuddy/resources/images/rupee.jpeg" style="width: 28px;"> ${trip.cost}</p>
+                <p><strong class="glyphicon glyphicon-globe"></strong> ${trip.info}</p>
+                <div class="form-control" style="text-align:center;width:40%; font-size: 4vmin; height: 10%; background-image: linear-gradient(to right, rgb(54, 69, 211), rgb(82, 231, 77)); color: black">
                     INVITE FRIENDS<br>
-                   <a href="https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"><img src="/tripbuddy/resources/images/facebook.png" style="width:15%;"></a>
+                   <a TARGET="_top"href="https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"><img src="/tripbuddy/resources/images/facebook.png" style="width:15%;"></a>
                    <a href="whatsapp://send?text=Lets go to a trip..! https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"> <img src="/tripbuddy/resources/images/whatsapp.png" style="width:13%;"></a>
                 </div>
             

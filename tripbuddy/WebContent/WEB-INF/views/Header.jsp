@@ -1,3 +1,4 @@
+<br><br><br>
  <div class="header container-fluid" style="background-color:black; margin-left: auto; margin-right: auto; margin-bottom:0px;">
         <br>
         <div class="trip" style="font-size: 8vmin; font-family: bookmanold style; color:orangered;">
