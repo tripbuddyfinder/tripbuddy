@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.app.models.PostModel;
+import org.app.models.userModel;
 import org.app.services.PostServices;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,12 +51,16 @@ public class TrippostController
 		return "Postdetail";
 	}
 	
-	@RequestMapping(value="/joinroom/{postid}/{userid}")
-	public String joinRoom(HttpSession session,Model model, @PathVariable("postid")String postid, @PathVariable("userid")String userid)
+	@RequestMapping(value="/joinroom/{postid}")
+	public String joinRoom(HttpSession session,Model model, @PathVariable("postid")String postid)
 	{
-		
-		
-		return null;
+		userModel user = (userModel) session.getAttribute("fbsession");
+		if(user!=null) {
+			service.join(postid,user.getUid());
+			return "redirect:/chatroom";
+		}
+					
+		return "500";
 	}
 	
 //	@RequestMapping(value="/Home", method=RequestMethod.GET)

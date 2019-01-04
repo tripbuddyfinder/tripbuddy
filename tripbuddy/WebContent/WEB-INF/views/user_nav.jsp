@@ -5,14 +5,21 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="resources/styles/userhome.css">
+    <link rel="stylesheet" href="/tripbuddy/resources/styles/userhome.css">
+    <script src="/tripbuddy/resources/vendor/fb/fb.js"></script>
+  	<script src="/tripbuddy/resources/scripts/fb.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+    function open(){
+   		console.log('<c:out value="${gid}"/>');
+    }
+    </script>
 </head>
 
-<body>
+<body onload="open()">
  
  <div id="navbar" style="position: fixed; width: 100%;">
         <nav class="navbar navbar-inverse">
@@ -31,20 +38,40 @@
 
                 <div class="collapse navbar-collapse navbar-right" id="Navbar1">
 					
+					<c:if test="${!empty fbsession.uid}">
 					
                      <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
-                    </ul>	
+                        <li><a href="javascript:fblogout()"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
+                    </ul>
+                                       
+                   <c:if test="${!empty gid}"> <ul class="nav navbar-nav  navbar-right">
+                        <li><a href="/tripbuddy/chatroom"><span class="glyphicon glyphicon-tasks"></span>Chat</a></li>
+                    </ul> 
+                    </c:if> 
+                                        
                     <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="feedback"><span class="glyphicon glyphicon-tasks"></span>Feedback</a></li>
-                    </ul>  
-                    <ul class="nav navbar-nav  navbar-right">
-                        <li><a href="profile"><span class="glyphicon glyphicon-list-alt"></span> Profile</a></li>
+                        <li><a href="/tripbuddy/profile/${fbsession.uid}"><span class="glyphicon glyphicon-list-alt"></span>Profile</a></li>
                     </ul>
                    
                     <ul class="nav navbar-nav  navbar-right">
                         <li><a href="home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
                     </ul> 
+                    
+                    </c:if>
+                    
+                    <c:if test="${empty fbsession.uid}">
+					
+                     <ul class="nav navbar-nav  navbar-right">
+                        <li><a href="javascript:fblogin()"><span class="glyphicon glyphicon-log-out"></span> Log In</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav  navbar-right">
+                        <li><a href="/tripbuddy/feedback"><span class="glyphicon glyphicon-tasks"></span>Feedback</a></li>
+                    </ul>  
+                    <ul class="nav navbar-nav  navbar-right">
+                        <li><a href="home"><span class="glyphicon glyphicon-home"></span>Home</a></li>
+                    </ul> 
+                    
+                    </c:if>
                    
                 </div>
             </div>

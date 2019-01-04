@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
-@SessionAttributes({"fbsession"})
+@SessionAttributes({"fbsession","gid"})
 public class userController 
 {
 	UserService service = new UserService();
@@ -34,17 +34,17 @@ public class userController
 		System.out.println("checking user");
 		System.out.println(user);
 		if(!service.userIsBlocked(user.getUid())) {
-			
-			if(service.userIsRegistered(user.getUid())) {
-			model.addAttribute("fbsession", user);
-			return ok;
-		
+								
+			if(service.userIsRegistered(user.getUid())) {				
+			model.addAttribute("fbsession", user);	
+			model.addAttribute("gid", service.getUserGroup(user.getUid()));	
+			return ok;		
 			}
-			else{
-				
+			else{				
 				String result= service.register(user);
 						if(result!=null) {
 						model.addAttribute("fbsession", user);
+						model.addAttribute("gid", service.getUserGroup(user.getUid()));	
 						return ok;
 				}
 			}

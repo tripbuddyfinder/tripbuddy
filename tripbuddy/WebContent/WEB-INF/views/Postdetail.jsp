@@ -46,8 +46,8 @@
                 <p><strong class="glyphicon glyphicon-globe"></strong>${trip.info}</p>
                 <div class="form-control" style="text-align:center;width:50%; font-size: 4vmin; height: 10%; background-image: linear-gradient(to right, rgb(54, 69, 211), rgb(82, 231, 77)); color: black">
                     INVITE FRIENDS<br>
-                   <a href="https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"><img src="/tripbuddy/resources/images/facebook.png" style="width:8%;"></a>
-                   <a href="whatsapp://send?text=Lets go to a trip..! https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"> <img src="/tripbuddy/resources/images/whatsapp.png" style="width:8%;"></a>
+                   <a href="https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"><img src="/tripbuddy/resources/images/facebook.png" style="width:15%;"></a>
+                   <a href="whatsapp://send?text=Lets go to a trip..! https://www.facebook.com/sharer/sharer.php?u=https://tripbuddyfinder.herokuapp.com/postdetail/${trip.postid}"> <img src="/tripbuddy/resources/images/whatsapp.png" style="width:13%;"></a>
                 </div>
             
             </div>

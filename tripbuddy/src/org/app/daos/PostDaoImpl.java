@@ -65,4 +65,10 @@ public class PostDaoImpl implements PostDao{
 		
 	}
 
+	public void saveGroup(String postid, String userid) {
+		String query="update users set g_id=? where u_id=?";
+		connect.getTemplate().update(query,postid,userid);
+		
+	}
+
 }

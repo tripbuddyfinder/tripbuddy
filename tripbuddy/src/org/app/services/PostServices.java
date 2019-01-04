@@ -24,5 +24,10 @@ public class PostServices
   public List<PostModel> getTripPost(PostModel post)
   {
 	return dao.getPost(post);
-  }  
+  }
+
+public void join(String postid, String userid) {
+	dao.saveGroup(postid,userid);
+	
+}  
 }

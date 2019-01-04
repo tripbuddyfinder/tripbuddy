@@ -22,7 +22,7 @@
 </head>
 
 <body onload="init()" onresize="changeUi()">
-	<%@include file="user_nav.jsp" %>
+	<%@include file="Header.jsp" %>
   <div id="container">
 	<aside id="userAside">
 		<header id="users">

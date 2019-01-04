@@ -29,16 +29,18 @@ public class chatController {
 	UserService service = new UserService();
 	ChatDaoImpl dao = new ChatDaoImpl();
 	
-	@RequestMapping("/chatroom/{username}/{group}") public String goo(Model model,HttpSession session,@PathVariable("username")String name,@PathVariable("group")String group)
+	@RequestMapping("/chatroom") 
+	public String goo(Model model,HttpSession session)
 	{
-		//userModel user = (userModel) session.getAttribute("fbsession");
-	//	model.addAttribute("gid",service.getUserGroup(user.getUid()));
-		model.addAttribute("gid",group);
-		model.addAttribute("uname",name);
-		model.addAttribute("uid","1108305942678199");
-		//model.addAttribute("msgs",dao.getMsgs("q"));
+		userModel user = (userModel) session.getAttribute("fbsession");
+		if(user!=null) {
+		model.addAttribute("gid",service.getUserGroup(user.getUid()));		
+		model.addAttribute("uname",user.getUname());
+		model.addAttribute("uid",user.getUid());		
 		return "chat";
 		}
+		else return "500";
+	}
 	
 	
 	@RequestMapping("/chatroom/fetchlist/{group}") 

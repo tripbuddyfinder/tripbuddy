@@ -19,9 +19,9 @@
             console.log('resp');
             console.log(resp.code);
             if(resp==='auth')
-               window.location.href = window.location.href+'home';
+               window.location.href = 'http://localhost:8080/tripbuddy/home';
             if(resp==='blocked')
-                window.location.href = window.location.href+'blocked';
+                window.location.href = 'http://localhost:8080/tripbuddy/blocked';
               
               },
             data: JSON.stringify(session)
@@ -40,7 +40,7 @@
             }, {scope: 'email,user_location'});            
         }
 
-        function logout() {
+        function fblogout() {
             FB.logout(function(response) {
               console.log(response);
             });

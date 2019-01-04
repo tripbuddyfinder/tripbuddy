@@ -8,13 +8,12 @@ var chatinput =null;
 var noti = null;
 var admin=null;
 var uid=null;
-var friendlist = 'http://localhost:8080/tripbuddy/chatroom/fetchlist/2';
-var oldmsgs ='http://localhost:8080/tripbuddy/chatroom/oldmsgs/2';
-var grpAdmin='http://localhost:8080/tripbuddy/chatroom/getAdminId/2';
-var gethotel='http://localhost:8080/tripbuddy/chatroom/getHotels';
+var friendlist = 'http://localhost:8080/tripbuddy/chatroom/fetchlist/';
+var oldmsgs ='http://localhost:8080/tripbuddy/chatroom/oldmsgs/';
+var grpAdmin='http://localhost:8080/tripbuddy/chatroom/getAdminId/';
+var gethotel='http://localhost:8080/tripbuddy/chatroom/getHotels/';
 var context = 'http://localhost:8080/tripbuddy/profile/';
-function init(){
-	console.log('value of uid'+uid);
+function init(){	
 	userlist= get("#userlist");
 	chatpanel= get("#chat");
 	chatform= get("#chat-inputarea");
@@ -26,8 +25,7 @@ function init(){
 	    var time = new Date();
 	    if (!msgText) return;
 	    appendMessage(username, msgText, "me", time,'CHAT');
-	    sendMessage('CHAT',username,msgText,group,time);
-	    
+	    sendMessage('CHAT',username,msgText,group,time);	    
 	    chatinput.value = "";
 	     
 	  });
@@ -36,10 +34,7 @@ function init(){
     console.log(socket);
                 stompClient = Stomp.over(socket);
                 stompClient.connect({}, function(frame) {
-                	
-                	
-                    console.log('Connected: ' + frame);
-                  
+                	                  
                   sendMessage('JOIN',username,'',group,'');
                   stompClient.subscribe('/topic/room/'+group, function(Response) {
                       var json = JSON.parse(Response.body);
@@ -51,18 +46,19 @@ function init(){
                 });
                 });  
      
-     $.get(grpAdmin, function(response) {   	 
+     $.get(grpAdmin+group, function(response) {   	 
 		   admin= response;
-		   $.get( friendlist, function(response) {
+		   $.get( friendlist+group, function(response) {
 		 	  addUserList(response);
  	});});
-     $.get( oldmsgs, function(response) {
+     
+     $.get( oldmsgs+group, function(response) {
     	 console.log(response);
    	  showMsgs(response);
    	});
 }
 	function getHotels(){		
-		$.get(gethotel+'/'+group, function(response) {	    	
+		$.get(gethotel+group, function(response) {	    	
 	   	  showMsgs(response);
 	   	});
 		
