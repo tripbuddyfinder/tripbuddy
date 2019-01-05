@@ -63,24 +63,35 @@ public class UserDaoImpl implements UserDao
 	} 
 	
 	public List<userModel> fetchUsers() {
-		
+		//String q="select * from blocklist join users on blocklist.u_id = users.u_id";				
 		String sql="select * from users";
 		List<userModel> users = connect.getTemplate().query(sql, new Object[] {},new userModelMapper());
+//		List<userModel> blocked = connect.getTemplate().query(q, new Object[] {},new userModelMapper());
+//		for(int i=0;i<blocked.size();i++)
+//		{
+//			String id = blocked.get(i).getUid();
+//			for(int j=0;j<users.size();i++)
+//			{
+//				if(id.equalsIgnoreCase((users.get(j).getUid())))
+//					users.remove(j);
+//			}
+//		}
 		return users;
 		
 	}
 	
 	public int blockUser(String uid)
 	{
-		String sql="insert into blocklist(u_id) value(?)";
-		int i = connect.getTemplate().update(sql, new Object[] {uid});
+		String sql="insert into blocklist(u_id) values(?)";
+		int i = connect.getTemplate().update(sql , new Object [] {uid});
 		return i;
 	}
 	
 	public int unblockUser(String uid)
 	{
-		String sql="delete from blocklist where u_id=?";
-		int i = connect.getTemplate().update(sql, new Object[] {uid});
+		
+		String sql="DELETE FROM blocklist WHERE u_id= "+uid+"";
+		int i = connect.getTemplate().update(sql);
 		return i;
 	}
 	

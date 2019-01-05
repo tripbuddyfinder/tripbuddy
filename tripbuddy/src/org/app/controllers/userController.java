@@ -83,13 +83,10 @@ public String userblocked()
 	{	
 		String sid= (String)session.getAttribute("admin");
 		System.out.println("SID:"+sid);
-		if(sid!=null) {
-		service.blockUser(uid);
+		
+		service.blockUser(uid);		
 		return "Dashboard";
-		}
-		else {
-		return "Showusers";
-	}
+	
 	}
 	
 	
@@ -98,7 +95,7 @@ public String userblocked()
 	{	
 		System.out.println("un-Blocked User ID:"+uid);
 		service.unblockUser(uid);
-		return "tester";
+		return "Dashboard";
 	}
 	
 	@RequestMapping(value="/blockusers",method=RequestMethod.GET)

@@ -37,7 +37,7 @@ public class feedbackController
 		}
 		System.out.println(fb.getUid() + " " + fb.getSub() + " " + fb.getDesc() + " " + fb.getTimestamp());
 		dao.insertFeedback(fb);
-		  return "index";
+		  return "feedback";
 	 }
 	
 	

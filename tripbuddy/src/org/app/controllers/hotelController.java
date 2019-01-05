@@ -29,6 +29,6 @@ public class hotelController
 	
 	System.out.println("Calling DAO");
 	service.addhotel(hotel);
-	return "tester";
+	return "AdminLogin";
   }
 }

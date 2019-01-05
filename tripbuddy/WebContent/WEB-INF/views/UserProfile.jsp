@@ -49,7 +49,7 @@
                 <div class="uprow" style="color:gray; font-family:bookmanold style; font-size:150%;">
                     <center>
                         <div class="col-sm-3"><br> YOU VISITED <br>
-                            <span style="font-size:150%; color: white">Delhi</span>
+                            <span style="font-size:150%; color: white">Manali</span>
                         </div>
 
                         <div class="col-sm-5"><br> ON <br>
@@ -57,7 +57,7 @@
                         </div>
 
                         <div class="col-sm-3"><br> WITH <br>
-                            <span style="font-size:150%; color: white">sanjay, rajan, biplab, rahuk, ranjan, manav,
+                            <span style="font-size:150%; color: white">sanjay, biplab, rahul
                                 nitin</span>
                         </div><br>
 

@@ -1,6 +1,5 @@
 package org.app.controllers;
 
-
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -62,7 +61,7 @@ public class chatController {
 		waiting.setContent("Please Wait..\nSearching best hotels for you.");
 		messagingTemplate.convertAndSend("/topic/room/"+group, waiting);
 		List<HotelModel> list=dao.getHotels(group);
-		
+		System.out.println(list);
 		for(int i=0;i<list.size();i++) {	
 		
 		ChatMessage msg = toMsg(group,list.get(i));		

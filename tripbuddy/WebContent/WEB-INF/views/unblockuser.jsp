@@ -10,20 +10,27 @@
 </head>
 
 <body style="background-image: url(/tripbuddy/resources/images/black.jpeg);">
+<%@include file="admin_nav.jsp" %>
 <%@include file="Header.jsp" %>
+
+<div class="navbar">
+<br>
+    <div class="col-sm-2" style=" background-color: rgb(255, 255, 255);">
+    <center>
+        <a href="/tripbuddy/fetchusers" style="font-family:bookmanold style; font-size:150%;">VIEW USER</a><br>
+        <a class="active"  href="/tripbuddy/fetchfeedbacks" style="font-family:bookmanold style; font-size:150%;">VIEW FEEDBACK</a><br>
+        <a href="/tripbuddy/addhotels" style="font-family:bookmanold style; font-size:150%;">ADD HOTEL</a><br>
+         <a href="/tripbuddy/blockusers" style="font-family:bookmanold style; font-size:150%;">BLOCK USERS</a><br>
+    </center>
+    </div>
+    </div>
 
 
     <!-----  (BLOCK)  ----->
 
     <p style="color:white; font-family:bookmanold style; font-size:500%; text-align:center;">
-    <br>    YOUR ACCOUNT IS BLOCKED  
-    <br>NEED HELP..?<br>
-    <center>
-    <a href="feedback"class="form-control zoom" style="width:40%; color:white; background-color: rgb(10, 2, 19); font-family:bookmanold style; font-size:5vmax; height: 10%;  border-radius: 50px;">
-        Contact us
-    </a>
-    </center>
-    <br><br>
+    <br>    ACCOUNT IS UNBLOCKED  
+     <br><br>
     </p>
 
     <!-----   (FOOTER)   ----->

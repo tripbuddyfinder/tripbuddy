@@ -21,17 +21,19 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#home" style="font-size: 150%; color:white; font-family:Bookman Old Style;">
-                        <span class="glyphicon glyphicon-home"><span class="active"> HOME</span></span>
+                    <a class="navbar-brand" href="/tripbuddy/Dashboard" style="font-size: 150%; color:white; font-family:Bookman Old Style;">
+                       <span class="glyphicon glyphicon-home"><span class="active"> HOME</span></span>
                     </a>
                 </div>
 
                 <div class="collapse navbar-collapse navbar-right" id="Navbar1">
 
-
+					
                     <ul class="nav navbar-nav  navbar-right">
                         <li><a href="#review"><span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>
                     </ul>
+                    
+                   
                    
                 </div>
             </div>

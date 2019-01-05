@@ -17,10 +17,10 @@ public class FeedbackDaoImpl  implements FeedbackDao
 	  public String insertFeedback(Feedback fb)
 	  {
 		  
-		  String query="insert into feedbacks(sub,discr,u_id,f_timestamp,f_status) values(?,?,?,?,?)";
+		  String query="insert into feedbacks(sub,discr,u_id,f_timestamp) values(?,?,?,?)";
 		   
 		 JdbcTemplate conn=connect.getTemplate();
-				int i=conn.update(query, new Object[] { fb.getSub(), fb.getDesc(), fb.getUid() , fb.getTimestamp() , fb.getStatus()} );
+				int i=conn.update(query, new Object[] { fb.getSub(), fb.getDesc(), fb.getUid() , fb.getTimestamp()} );
 				System.out.println("No Of Rows Affected=" +i);
 				return "facebook";
 	  }

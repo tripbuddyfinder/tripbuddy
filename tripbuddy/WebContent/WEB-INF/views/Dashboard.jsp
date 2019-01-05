@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+ <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
      <%@ include file="admin_nav.jsp"%>
@@ -21,57 +21,36 @@
 <body>
 
 
-
-    <!-----   (Profile)   ----->
-    
-    <div class="navbar">
-<br>
-    <div class="col-sm-2" style=" background-color: rgb(255, 255, 255);">
-    <center>
-        <a href="/tripbuddy/fetchusers" style="font-family:bookmanold style; font-size:150%;">VIEW USER</a><br>
-        <a href="/tripbuddy/fetchfeedbacks" style="font-family:bookmanold style; font-size:150%;">VIEW FEEDBACK</a><br>
-        <a href="/tripbuddy/addhotels" style="font-family:bookmanold style; font-size:150%;">ADD HOTEL</a><br>
-        <a href="/tripbuddy/blockusers" style="font-family:bookmanold style; font-size:150%;">BLOCK USERS</a><br>
-    </center>
+    <div style="background-color: rgb(216, 218, 219);" >
+    <br><br>
+    <div class="container-fluid">        
+            <div class="col-sm-14" style="margin-left:18% ">
+            <div class="col-xs-6">
+            <a href="/tripbuddy/fetchusers"><img class="zoom" src="/tripbuddy/resources/images/user.png" style="width:50%; border-radius:50%; border: 2px solid rgb(123, 94, 156);" > <br><br>
+            <p style="font-family:bookmanold style; font-size: 200%;"><strong>VIEW USER</strong></p></a>
+            </div>
+            <div class="col-xs-6" >
+            <a href="/tripbuddy/blockusers"><img class="zoom" src="/tripbuddy/resources/images/blockuser.png" style="width:50%; border-radius:50%; border: 2px solid rgb(123, 94, 156);" > <br><br>
+            <p style="font-family:bookmanold style; font-size: 200%;"><strong>BLOCKED USER</strong></p></a>
+            </div> 
+           </div>
+    </div>	
+    <br><br><br>
+    <div class="container-fluid" >        
+            <div class="col-sm-14" style="margin-left:18% ">
+            <div class="col-xs-6">
+            <a href="/tripbuddy/addhotels"><img class="zoom" src="/tripbuddy/resources/images/hotel.png" style="width:50%; border-radius:50%; border: 2px solid rgb(123, 94, 156);" > <br><br>
+            <p style="font-family:bookmanold style; font-size: 200%;"><strong>ADD HOTEL</strong></p></a>
+            </div>
+            <div class="col-xs-6" >
+            <a href="/tripbuddy/fetchfeedbacks"><img class="zoom" src="/tripbuddy/resources/images/feedback.png" style="width:50%; border-radius:50%; border: 2px solid rgb(123, 94, 156);" > <br><br>
+            <p style="font-family:bookmanold style; font-size: 200%;"><strong>FEEDBACKS</strong></p></a>
+            </div> 
+            </div>
+            </div>
+    </div>
     </div>
 
-    <div class="col-sm-10" style=" background-color: rgb(255, 255, 255);">
-        <center>
-
-            <table style="font-family: bookmanold style; font-size: 150%;">
-                <tr style=" width: 100%;">
-                    <th>NAME</th>
-                    <th>CITY</th>
-                    <th>E-MAIL</th>
-                    
-                    
-                </tr>
-                 <c:forEach var="user" items="${userlist}" >
-                <tr>
-                   
-     <tr>
-      
-      <td>${user.uname}</td> 
-      <td>${user.ucity}</td>
-      <td>${user.uemail}</td>
-      <td><img src="${user.upic}" alt="Not available" style="width:150px;"/></td>
-      
-                    
-                    <td style="margin-right:10%; "><br><br>
-                        <span><button  class="form-control" style=" width: 100%; background-color: rgb(173, 27, 27); color: white"  value="${user.uid}" id="btn1" onclick="getdata()">Block</button></span>
-                        <span><br><button  class="form-control" style=" width: 100%; background-color: rgb(12, 102, 39); color: white"  value="${user.uid}" id="btn2" onclick="getdata()">UnBlock</button><br><br></td></span>
-                </tr>
-
-</c:forEach>
-            </table>
-            
-
-        </center>
-    </div>
-
-    </div>
-    <br>
-    
     
     <!-----   (FOOTER)   ----->
 

@@ -41,15 +41,15 @@
                 <input type="hidden" name="timestamp" value="n" id="ts">
 
                 <div class="col-xs-12">
-                    From Place <br> <input type="hidden" id="countryId" value="IN" />
+                    From Place <br> <input type="hidden" id="countryId" value="IN" required />
                     <div class="col-xs-6">
-                        <select class="states order-alpha form-control" style="width:40%;" id="stateId">
+                        <select class="states order-alpha form-control" style="width:40%;" id="stateId" required>
                             <option>Select State</option>
                         </select>
                     </div>
                     <div class="col-xs-6">
                         <select name="source" class="cities order-alpha limit-pop-5000 form-control" style="width:40%;"
-                            id="cityId">
+                            id="cityId" required>
                             <option>Select City</option>
                         </select>
                     </div>
@@ -57,25 +57,25 @@
                 <br><br><br>
 
                 <div class="col-xs-12">
-                    To Place <br> <input type="hidden" id="countryId" value="IN" />
+                    To Place <br> <input type="hidden" id="countryId" value="IN" required />
 
                     <div class="col-xs-6">
-                        <select class="states2 order-alpha form-control" style="width:40%;" id="stateId2">
+                        <select class="states2 order-alpha form-control" style="width:40%;" id="stateId2" required>
                             <option>Select State</option>
                         </select>
                     </div>
                     <div class="col-xs-6">
                         <select name="destination" class="cities2 order-alpha limit-pop-5000 form-control" style="width:40%;"
-                            id="cityId2">
+                            id="cityId2" required>
                             <option>Select City</option>
                         </select>
                     </div>
                 </div>
                 <br><br><br>
 
-                Schedule Date <br> <input type="date" class="form-control" style="width:40%;" name="pdate"><br>
+                Schedule Date <br> <input type="date" class="form-control" style="width:40%;" name="pdate" required><br>
 
-                Duration <br> <select name="duration" class="form-control" style="width:40%;">
+                Duration <br> <select name="duration" class="form-control" style="width:40%;" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -90,7 +90,7 @@
                 </select>
                 <br>
 
-                No of tripbuddies <br> <select name="members" class="form-control" style="width:40%;">
+                No of tripbuddies <br> <select name="members" class="form-control" style="width:40%;" required>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -99,7 +99,7 @@
                 </select>
                 <br>
 
-                cost per head <br><select name="cost" class="form-control" style="width:40%;">
+                cost per head <br><select name="cost" class="form-control" style="width:40%;" required>
                     <option value="3000">3000</option>
                     <option value="5000">5000</option>
                     <option value="6000">6000</option>
@@ -109,7 +109,7 @@
                 </select>
                 <br>
 
-                ABOUT <br> <textarea rows="5" cols="20" class="form-control" style="width:40%;" name="info">
+                ABOUT <br> <textarea rows="5" cols="20" class="form-control" style="width:40%;" name="info" required>
 </textarea>
                 <br>
 

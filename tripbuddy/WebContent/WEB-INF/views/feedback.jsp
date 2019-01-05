@@ -18,7 +18,7 @@
 <script>
 function myFunction(event) {
   var n = new Date();
-  //alert(n);
+ // alert(n);
   document.getElementById("ts").value=n;
  
 }
@@ -56,10 +56,10 @@ function myFunction(event) {
               <div class="col-sm-6">
               <input type="hidden" name="timestamp" value="ts" id="ts">
               <input type="hidden" name="uid" value="${fbsession.uid}">
-                <input type="text" name="sub" placeholder="SUBJECT" class="form-control">
+                <input type="text" name="sub" placeholder="SUBJECT" class="form-control" required>
               </div><br>
             </div>
-            <textarea placeholder="Description"  name="desc" rows="5" class="form-control"></textarea>
+            <textarea placeholder="Description"  name="desc" rows="5" class="form-control" required></textarea>
           </div>
           <br>
           <div class="col-sm-2 pull-right zoom">

@@ -36,7 +36,7 @@
 		<header>
 			
 			<div>
-				<h2>Trip managed by tripbuddy</h2>
+				<h2>Trip by tripbuddy</h2>
 				<h3 id="totalmsgs"></h3>				
 			</div>
 			<input style="float:right;" class="btn btn-primary" type="button" value="Suggest hotels" onclick="getHotels();"/>

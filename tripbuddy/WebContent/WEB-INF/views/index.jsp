@@ -66,7 +66,7 @@ of the most
             <img src="resources/images/nainital1.jpg" style="width:100%; height: 400px;">
             <div class="carousel-caption" style="bottom:1px;">
               <h3 id="heading">Nainital</h3>
-              <p id="subheading">Nainital is Kumaon'™s biggest town and favorite hill retrea</p>
+              <p id="subheading">Nainital is kumaon biggest town and favorite hill retrea</p>
             </div>
 
           </div>

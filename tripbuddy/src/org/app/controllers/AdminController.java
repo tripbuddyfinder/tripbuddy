@@ -38,8 +38,15 @@ public class AdminController {
 		List <AdminModel> data=service.checkLogin(Amodel); 
 		
 		//System.out.println(data);
-		return "ShowFeedbacks";
+		return "Dashboard";
 	}
+	
+	@RequestMapping(value="/Dashboard")
+	public String showHome()
+	{
+		return "Dashboard";
+	}
+	
 	
 	@RequestMapping(value="/logout" , method=RequestMethod.GET)
 	public String logout(HttpSession session)
